@@ -16,23 +16,36 @@ body {
 // svg Logo
 
 .cls-1 {
-    fill: url(#linear-gradient)
+    fill: url(#linear-gradient);
 }
 
 .cls-2 {
     fill: #41f8a4;
     font-size: 10px;
     font-family: AppleSDGothicNeo-Bold, Apple SD Gothic Neo;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .cls-3 {
     font-family: AppleSDGothicNeo-Light, Apple SD Gothic Neo;
-    font-weight: 300
+    font-weight: 300;
 }
 
 .cls-4 {
-    font-family: AppleSDGothicNeo-Regular,
-        Apple SD Gothic Neo;
-    font-weight: 400
+    font-family: AppleSDGothicNeo-Regular, Apple SD Gothic Neo;
+    font-weight: 400;
+}
+
+// 반응형 test
+
+.large {
+    background: #000;
+}
+
+.midium {
+    background: #f00;
+}
+
+.small {
+    background: #ff0;
 }
