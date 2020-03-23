@@ -10,7 +10,7 @@ class ApiStore {
         `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_KEY}&language=en-US&page=1`
       )
       .then(res => (this.data = res))
-      .catch(e => console.log("error: " + e));
+      .catch(error => console.log("error: " + error));
   }
 }
 
