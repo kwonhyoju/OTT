@@ -26,7 +26,7 @@ class App extends Component {
       });
     } else if (mainWidth > 900) {
       this.setState({
-        active: "midium"
+        active: "medium"
       });
     } else {
       this.setState({
