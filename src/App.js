@@ -17,6 +17,7 @@ class App extends Component {
     this.handleWindowResize = this.handleWindowResize.bind(this);
     this.mainApp = React.createRef();
   }
+  
   componentDidMount() {
     window.addEventListener("resize", this.handleWindowResize);
     this.props.apiStore.getData();
