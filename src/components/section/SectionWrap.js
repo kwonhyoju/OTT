@@ -5,11 +5,8 @@ import currentimg from "../../img/우리집.png";
 @inject("apiStore")
 @observer
 class SectionWrap extends Component {
-  componentDidMount() {
-    this.props.apiStore.getData();
-  }
   render() {
-    console.log(this.props.apiStore.data);
+    console.log(":::AAAA:::",this.props.viewData.data.results);
     return (
       <section className="section-wrap">
         <div className="section-main_roll">

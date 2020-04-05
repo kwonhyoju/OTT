@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import {inject,observer} from "mobx-react";
 import "./scss/index.scss";
 import Header from "./components/header/Header";
-import SectionWrap from "./components/section/SectionWrap";
+// import SectionWrap from "./components/section/SectionWrap";
+import SectionContainer from "./components/container/SectionContainer"
 import Footer from "./components/footer/Footer";
 import Loading from "./components/Loading";
 
@@ -44,7 +45,7 @@ class App extends Component {
     return (
       <div ref={this.mainApp} className={`App ${this.state.active}`}>
         <Header />
-        {this.props.apiStore.isLoading?<SectionWrap viewData={this.props.apiStore.data}/>:<Loading/>}
+        {this.props.apiStore.isLoading?<SectionContainer/>:<Loading/>}
         <Footer />
       </div>
     );

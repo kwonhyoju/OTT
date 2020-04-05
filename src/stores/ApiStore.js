@@ -13,10 +13,8 @@ class ApiStore {
     }
   });
 
-
   @action
   getData() {
-    axios
       this.movieApi.get(
         `movie/upcoming`
       )
