@@ -7,7 +7,9 @@ import Loading from "../Loading";
 @observer
 class SectionContainer extends Component {
     componentDidMount() {
+        this.props.apiStore.popularData();
         this.props.apiStore.upcomingData();
+        this.props.apiStore.getGenre();
     }
 
     render() {
@@ -15,7 +17,11 @@ class SectionContainer extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <SectionWrap viewData={this.props.apiStore.data} />
+                    <SectionWrap
+                        popData={this.props.apiStore.popData}
+                        upcomeData={this.props.apiStore.upcomeData}
+                        genreData={this.props.apiStore.genreData}
+                    />
                 ) : (
                     <Loading />
                 )}
