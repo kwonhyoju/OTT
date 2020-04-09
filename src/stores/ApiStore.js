@@ -2,8 +2,10 @@ import { observable, action } from "mobx";
 import axios from "axios";
 
 class ApiStore {
-    @observable popData = {};
-    @observable upcomeData = {};
+    @observable popData = {}; //main_roll
+    @observable nowData = {}; //현재상영작
+    @observable upcomeData = {}; //개봉예정작
+
     @observable genreData = {};
     @observable isLoading = false;
 
@@ -26,13 +28,22 @@ class ApiStore {
     }
 
     @action
+    nowpalyData() {
+        this.movieApi
+            .get(`movie/now_playing`)
+            .then((res) => {
+                this.nowData = res;
+                this.isLoading = true;
+            })
+            .catch((error) => console.log("error: " + error));
+    }
+
+    @action
     upcomingData() {
         this.movieApi
             .get(`movie/upcoming`)
             .then((res) => {
-                this.upcomeData = res;
-                this.isLoading = true;
-                // console.log("::RES:::",res);
+                this.upcomeData = res.data;
             })
             .catch((error) => console.log("error: " + error));
     }

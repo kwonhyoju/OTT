@@ -8,6 +8,7 @@ import Loading from "../Loading";
 class SectionContainer extends Component {
     componentDidMount() {
         this.props.apiStore.popularData();
+        this.props.apiStore.nowpalyData();
         this.props.apiStore.upcomingData();
         this.props.apiStore.getGenre();
     }
@@ -19,6 +20,7 @@ class SectionContainer extends Component {
                 {loading ? (
                     <SectionWrap
                         popData={this.props.apiStore.popData}
+                        nowData={this.props.apiStore.nowData}
                         upcomeData={this.props.apiStore.upcomeData}
                         genreData={this.props.apiStore.genreData}
                     />
