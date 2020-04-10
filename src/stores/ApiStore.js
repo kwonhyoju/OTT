@@ -33,7 +33,6 @@ class ApiStore {
             .get(`movie/now_playing`)
             .then((res) => {
                 this.nowData = res;
-                this.isLoading = true;
             })
             .catch((error) => console.log("error: " + error));
     }
@@ -43,7 +42,8 @@ class ApiStore {
         this.movieApi
             .get(`movie/upcoming`)
             .then((res) => {
-                this.upcomeData = res.data;
+                this.upcomeData = res;
+                this.isLoading = true;
             })
             .catch((error) => console.log("error: " + error));
     }

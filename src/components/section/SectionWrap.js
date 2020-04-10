@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
-import currentimg from "../../img/우리집.png";
+// import currentimg from "../../img/우리집.png";
 
 @inject("apiStore")
 @observer
@@ -50,11 +50,28 @@ class SectionWrap extends Component {
             </ul>
         );
     };
+
+    upcome = () => {
+        const upcomes = this.props.upcomeData.data.results;
+        console.log("개봉예정::::", upcomes);
+        return (
+            <div className="section-schedule-roll">
+                {upcomes.map((info, index) => {
+                    let style = {
+                        backgroundImage: `url("https://image.tmdb.org/t/p/w1280/${info.poster_path}")`,
+                    };
+                    return (
+                        <div key={index} style={style}>
+                            <div className="schedule-text">{info.overview}</div>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
     render() {
         const nowpaly = this.props.nowData.data.results;
         const genreData = this.props.genreData.data.genres;
-        // 문제 1 왜 upcoming 데이터는 component에서 data.results하면  results 부터 인식을 못하는지
-        // 문제 2 왜 upcoming 데이터는 map 함수만 넣으면 오류가 나는지!(render위아래 다 했는데 안돼!)
 
         return (
             <section className="section-wrap">
@@ -107,11 +124,7 @@ class SectionWrap extends Component {
                 </div>
                 <div className="section-schedule-movies">
                     <p>개봉예정작</p>
-                    <div className="section-schedule-roll">
-                        <div>
-                            <div className="schedule-text">text</div>
-                        </div>
-                    </div>
+                    {this.upcome()}
                 </div>
             </section>
         );
