@@ -53,6 +53,7 @@ class SectionWrap extends Component {
 
     upcome = () => {
         const upcomes = this.props.upcomeData.data.results;
+        const genreData = this.props.genreData.data.genres;
         console.log("개봉예정::::", upcomes);
         return (
             <div className="section-schedule-roll">
@@ -62,7 +63,36 @@ class SectionWrap extends Component {
                     };
                     return (
                         <div key={index} style={style}>
-                            <div className="schedule-text">{info.overview}</div>
+                            {/* <div className="schedule-text">{info.overview}</div>
+                             */}
+                            <div className="schedule-text">
+                                <div>
+                                    <p className="title">{info.title}</p>
+                                    <p className="data-count">
+                                        <span>{info.release_date}</span> /{" "}
+                                        {info.vote_average}
+                                    </p>
+                                    <div>
+                                        <p className="genre">
+                                            {genreData.map((genre) => {
+                                                let genreName = "";
+
+                                                if (
+                                                    genre.id ===
+                                                    info.genre_ids[0]
+                                                ) {
+                                                    genreName = genre.name;
+                                                }
+
+                                                return genreName;
+                                            })}
+                                        </p>
+                                        <p className="subTitle">
+                                            {info.overview}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     );
                 })}

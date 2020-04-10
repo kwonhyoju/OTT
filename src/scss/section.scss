@@ -4,7 +4,7 @@
 // 스크롤 없애기
 // 호버 디자인
 .section-wrap {
-
+    padding-left: 40px;
     .section-main_roll {
         ul {
             display: flex;
@@ -26,7 +26,7 @@
                 border: none;
                 margin-right: 67px;
 
-                >p {
+                > p {
                     font-size: 16px;
                     color: #fff;
                     font-weight: 300;
@@ -100,7 +100,7 @@
     .section-current-movies {
         color: #222;
 
-        >p {
+        > p {
             color: #fff;
             font-size: 50px;
             font-weight: bold;
@@ -117,14 +117,14 @@
                 display: none;
             }
 
-            >div {
+            > div {
                 min-width: 20%;
                 max-width: 20%;
                 position: relative;
                 border-radius: 14px;
                 margin-right: 10px;
 
-                >img {
+                > img {
                     width: 100%;
                 }
 
@@ -138,7 +138,7 @@
                     border-radius: 14px;
                     padding: 20px 15px;
 
-                    >div {
+                    > div {
                         text-align: center;
                         height: 100%;
                         position: relative;
@@ -175,9 +175,9 @@
     }
 
     .section-schedule-movies {
-        color: #fff;
+        color: #222;
 
-        >p {
+        > p {
             color: #fff;
             font-size: 50px;
             font-weight: bold;
@@ -194,7 +194,7 @@
                 display: none;
             }
 
-            >div {
+            > div {
                 min-width: 400px;
                 height: 280px;
                 border-radius: 14px;
@@ -203,12 +203,49 @@
                 background-size: cover;
                 background-position: 0 10%;
                 background-repeat: no-repeat;
+                position: relative;
 
                 .schedule-text {
                     width: 100%;
                     height: 100%;
-                    background-color: rgba(255, 255, 255, 0.3);
-                    border-radius: 3%;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-radius: 14px;
+                    padding: 20px 15px;
+
+                    > div {
+                        text-align: center;
+                        height: 100%;
+                        position: relative;
+
+                        .title {
+                            font-size: 30px;
+                            font-weight: 500;
+                        }
+
+                        .data-count {
+                            padding-top: 10px;
+                        }
+
+                        div {
+                            position: absolute;
+                            bottom: 0;
+                            text-align: left;
+
+                            .genre {
+                                padding-bottom: 5px;
+                                font-weight: bold;
+                            }
+
+                            .subTitle {
+                                height: 128px;
+                                overflow: hidden;
+                                overflow-y: scroll;
+                            }
+                        }
+                    }
                 }
             }
         }
