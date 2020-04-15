@@ -62,7 +62,7 @@ class SectionWrap extends Component {
                         <span>{info.release_date}</span> ⭐️
                         {info.vote_average} / 10
                       </p>
-                      <div>
+                      <div className="text">
                         <p className="genre">
                           {genreData.map((genre) => {
                             let genreName = "";
@@ -75,6 +75,9 @@ class SectionWrap extends Component {
                           })}
                         </p>
                         <p className="subTitle">{info.overview}</p>
+                      </div>
+                      <div className="datil-view">
+                        <button>more view</button>
                       </div>
                     </div>
                   </div>
@@ -105,7 +108,7 @@ class SectionWrap extends Component {
                   <p className="data-count">
                     <span>{info.release_date}</span> ⭐️{info.vote_average} / 10
                   </p>
-                  <div>
+                  <div className="text">
                     <p className="genre">
                       {genreData.map((genre) => {
                         let genreName = "";
@@ -119,6 +122,9 @@ class SectionWrap extends Component {
                     </p>
                     <p className="subTitle">{info.overview}</p>
                   </div>
+                  <div className="datil-view">
+                        <button>more view</button>
+                      </div>
                 </div>
               </div>
             </div>

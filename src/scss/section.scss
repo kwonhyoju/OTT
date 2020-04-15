@@ -152,10 +152,11 @@
                             padding-top: 10px;
                         }
 
-                        div {
+                        .text {
                             position: absolute;
-                            bottom: 0;
+                            bottom: 50px;
                             text-align: left;
+                            color:#333;
 
                             .genre {
                                 padding-bottom: 5px;
@@ -163,9 +164,28 @@
                             }
 
                             .subTitle {
-                                height: 128px;
+                                height: 50px;
                                 overflow: hidden;
-                                overflow-y: scroll;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 3;
+                                -webkit-box-orient: vertical;
+                                word-wrap: break-word;
+                            }
+                        }
+                        .datil-view{
+                            position: absolute;
+                            bottom:0;
+                            width:100%;
+                            button{
+                                width: 100%;
+                                background: #333;
+                                border: none;
+                                color: #fff;
+                                font-size: 20px;
+                                font-weight: normal;
+                                padding: 5px 0;
+                                box-sizing: border-box;
+                                border-radius: 5px;
                             }
                         }
                     }
@@ -229,10 +249,12 @@
                             padding-top: 10px;
                         }
 
-                        div {
+                        .text {
                             position: absolute;
-                            bottom: 0;
+                            bottom: 50px;
                             text-align: left;
+                            color:#333;
+
 
                             .genre {
                                 padding-bottom: 5px;
@@ -240,9 +262,28 @@
                             }
 
                             .subTitle {
-                                height: 128px;
+                                height: 48px;
                                 overflow: hidden;
-                                overflow-y: scroll;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 3;
+                                -webkit-box-orient: vertical;
+                                word-wrap: break-word;
+                            }
+                        }
+                        .datil-view{
+                            position: absolute;
+                            bottom:0;
+                            width:100%;
+                            button{
+                                width: 100%;
+                                background: #333;
+                                border: none;
+                                color: #fff;
+                                font-size: 20px;
+                                font-weight: normal;
+                                padding: 5px 0;
+                                box-sizing: border-box;
+                                border-radius: 5px;
                             }
                         }
                     }
