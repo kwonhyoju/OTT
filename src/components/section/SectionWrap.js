@@ -49,6 +49,7 @@ class SectionWrap extends Component {
     return(
       <div className="section-current-roll">
             {nowplay.map((info, index) => {
+              let genreList = info.genre_ids.slice(0,2);
               return (
                 <div key={index}>
                   <img
@@ -67,9 +68,11 @@ class SectionWrap extends Component {
                           {genreData.map((genre) => {
                             let genreName = "";
 
-                            if (genre.id === info.genre_ids[0]) {
-                              genreName = genre.name;
-                            }
+                            genreList.findIndex(element=>{
+                              if(element === genre.id){
+                                genreName= genre.name;
+                              }
+                            });
 
                             return genreName;
                           })}
@@ -95,13 +98,14 @@ class SectionWrap extends Component {
     return (
       <div className="section-schedule-roll">
         {upcomes.map((info, index) => {
+          let genreList = info.genre_ids.slice(0,2);
+
+          // console.log("::::A:::",genreTest);
           let style = {
             backgroundImage: `url("https://image.tmdb.org/t/p/w1280/${info.poster_path}")`,
           };
           return (
             <div key={index} style={style}>
-              {/* <div className="schedule-text">{info.overview}</div>
-               */}
               <div className="schedule-text">
                 <div>
                   <p className="title">{info.title}</p>
@@ -111,11 +115,13 @@ class SectionWrap extends Component {
                   <div className="text">
                     <p className="genre">
                       {genreData.map((genre) => {
-                        let genreName = "";
+                        let genreName = [];
 
-                        if (genre.id === info.genre_ids[0]) {
-                          genreName = genre.name;
-                        }
+                        genreList.findIndex(element=>{
+                          if(element === genre.id){
+                            genreName= genre.name;
+                          }
+                        });
 
                         return genreName;
                       })}
