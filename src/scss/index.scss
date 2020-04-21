@@ -4,6 +4,7 @@
 @import "footer.scss";
 @import "loading.scss";
 @import "error.scss";
+@import "medium.scss";
 
 body {
   margin: 0;
@@ -47,9 +48,9 @@ body {
   background: #000;
 }
 
-.medium {
-  background: #f00;
-}
+// .medium {
+//   background: #f00;
+// }
 
 .small {
   background: #ff0;

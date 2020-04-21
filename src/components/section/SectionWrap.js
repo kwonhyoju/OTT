@@ -91,6 +91,7 @@ class SectionWrap extends Component {
     );
   }
 
+  //개봉예정작
   upcome = () => {
     const upcomes = this.props.upcomeData.data.results;
     const genreData = this.props.genreData.data.genres;
