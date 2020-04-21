@@ -7,47 +7,56 @@ import Error from "../Error";
 @inject("apiStore")
 @observer
 class SectionContainer extends Component {
-    constructor(props){
-        super(props);
-        this.state={
-            error:null
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: false,
+    };
+  }
 
-    async componentDidMount() {
-        try{
-            this.props.apiStore.popularData();
-            this.props.apiStore.nowpalyData();
-            this.props.apiStore.upcomingData();
-            this.props.apiStore.getGenre();
-        }catch(error){
-            this.setState({
-                error
-            })
-        }
-    }
+  componentWillMount() {
+    this.props.apiStore.setLoading();
+  }
 
-    render() {
-        const loading = this.props.apiStore.isLoading;
-        if(this.state.error === null){
-            return  (
-                <Fragment>
-                    {loading ? (
-                        <SectionWrap
-                            popData={this.props.apiStore.popData}
-                            nowData={this.props.apiStore.nowData}
-                            upcomeData={this.props.apiStore.upcomeData}
-                            genreData={this.props.apiStore.genreData}
-                        />
-                    ) : (
-                        <Loading />
-                    )} 
-            </Fragment>
-            );
-        }else{
-           return <Error/>
-        }
+  componentDidMount() {
+    try {
+      this.props.apiStore.popularData();
+      this.props.apiStore.nowpalyData();
+      this.props.apiStore.upcomingData();
+      this.props.apiStore.getGenre();
+    } catch (error) {
+      this.setState({
+        error: true,
+      });
     }
+  }
+
+  // componentWillUnmount() {
+  //   this.props.apiStore.setLoading();
+  // }
+
+  render() {
+    const loading = this.props.apiStore.isLoading;
+    console.log("sectionLoading", loading);
+    if (!this.state.error) {
+      return (
+        <Fragment>
+          {loading ? (
+            <SectionWrap
+              popData={this.props.apiStore.popData}
+              nowData={this.props.apiStore.nowData}
+              upcomeData={this.props.apiStore.upcomeData}
+              genreData={this.props.apiStore.genreData}
+            />
+          ) : (
+            <Loading />
+          )}
+        </Fragment>
+      );
+    } else {
+      return <Error />;
+    }
+  }
 }
 
 export default SectionContainer;

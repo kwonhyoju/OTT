@@ -2,63 +2,86 @@ import { observable, action } from "mobx";
 import axios from "axios";
 
 class ApiStore {
-    @observable popData = {}; //main_roll
-    @observable nowData = {}; //현재상영작
-    @observable upcomeData = {}; //개봉예정작
+  @observable popData = {}; //main_roll
+  @observable nowData = {}; //현재상영작
+  @observable upcomeData = {}; //개봉예정작
+  @observable genreData = {};
 
-    @observable genreData = {};
-    @observable isLoading = false;
+  @observable isLoading = false;
+  @observable
+  movieApi = axios.create({
+    baseURL: "https://api.themoviedb.org/3/",
+    params: {
+      api_key: `${process.env.REACT_APP_KEY}`,
+      language: "en-US",
+    },
+  });
 
-    @observable movieApi = axios.create({
-        baseURL: "https://api.themoviedb.org/3/",
+  //isLoading false로 초기화하는 함수
+  @action
+  setLoading() {
+    this.isLoading = false;
+  }
+
+  @action
+  popularData() {
+    this.movieApi
+      .get(`movie/popular`)
+      .then((res) => {
+        this.popData = res.data.results;
+      })
+      .catch((error) => console.log("error: " + error));
+  }
+
+  @action
+  nowpalyData() {
+    this.movieApi
+      .get(`movie/now_playing`)
+      .then((res) => {
+        this.nowData = res.data.results;
+      })
+      .catch((error) => console.log("error: " + error));
+  }
+
+  @action
+  upcomingData() {
+    this.movieApi
+      .get(`movie/upcoming`)
+      .then((res) => {
+        this.upcomeData = res.data.results;
+        this.isLoading = true;
+      })
+      .catch((error) => console.log("error: " + error));
+  }
+
+  @action
+  getGenre() {
+    this.movieApi
+      .get("/genre/movie/list")
+      .then((res) => {
+        this.genreData = res.data.genres;
+      })
+      .catch((error) => {
+        console.log("error: " + error);
+      });
+  }
+
+  /*detail 페이지 정보 얻어오기*/
+  @action
+  getMovieDetail(id) {
+    this.movieApi
+      .get(`movie/${id}`, {
         params: {
-            api_key: `${process.env.REACT_APP_KEY}`,
-            language: "en-US",
+          append_to_respones: "videos",
         },
-    });
-
-    @action
-    popularData() {
-        this.movieApi
-            .get(`movie/popular`)
-            .then((res) => {
-                this.popData = res;
-            })
-            .catch((error) => console.log("error: " + error));
-    }
-
-    @action
-    nowpalyData() {
-        this.movieApi
-            .get(`movie/now_playing`)
-            .then((res) => {
-                this.nowData = res;
-            })
-            .catch((error) => console.log("error: " + error));
-    }
-
-    @action
-    upcomingData() {
-        this.movieApi
-            .get(`movie/upcoming`)
-            .then((res) => {
-                this.upcomeData = res;
-                this.isLoading = true;
-            })
-            .catch((error) => console.log("error: " + error));
-    }
-
-    @action
-    getGenre() {
-        this.movieApi
-            .get("/genre/movie/list")
-            .then((res) => {
-                this.genreData = res;
-            })
-            .catch((error) => {
-                console.log("error: " + error);
-            });
-    }
+      })
+      .then((res) => {
+        this.movieDetail = res.data;
+        console.log("movieDetail", this.movieDetail);
+        this.isLoading = true;
+      })
+      .catch((error) => console.log("getMovieDetail: ", error));
+  }
 }
 
 export default ApiStore;
