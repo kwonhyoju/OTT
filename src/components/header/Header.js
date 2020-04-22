@@ -58,6 +58,8 @@ class Header extends Component {
                 </div>
                 <div className="addHeader">
                     <ul>
+                        <li>로그인</li>
+                        <li>회원가입</li>
                         <li>박스오피스</li>
                         <li>영화정보</li>
                         <li>영화사정보</li>

@@ -9,6 +9,9 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            .header-mo-gnb{
+                display: none;
+            }
 
             .header-logo {
                 width: 45px;
@@ -33,6 +36,7 @@
                     }
                 }
             }
+
         }
 
         .header-right-box {
@@ -68,6 +72,7 @@
                 }
             }
 
+
             .header-user {
                 ul {
                     display: flex;
@@ -85,6 +90,11 @@
                 }
             }
         }
+    }
+
+    .addHeader{
+        display: none;
+        padding:10px 0;
     }
 }
 
