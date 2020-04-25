@@ -27,7 +27,9 @@ const mainRoll = (popData, genreData) => {
               <br />
               <span className="pop-subtitle">{pop.overview}</span>
               <br />
-              <span className="main-roll-playbtn">More view</span>
+              <Link to={`/movie/${pop.id}`}>
+                <span className="main-roll-playbtn">More view</span>
+              </Link>
               <span className="main-roll-addbtn">Add to favourites</span>
             </p>
           </li>
@@ -126,9 +128,11 @@ const upcome = (upcomeData, genreData) => {
                   </p>
                   <p className="subTitle">{info.overview}</p>
                 </div>
-                <div className="datil-view">
-                  <button>more view</button>
-                </div>
+                <Link to={`/movie/${info.id}`}>
+                  <div className="datil-view">
+                    <button>more view</button>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

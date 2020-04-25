@@ -3,292 +3,296 @@
 // 폰트 패밀리 적용
 // 스크롤 없애기
 // 호버 디자인
+
+button {
+  cursor: pointer;
+}
+
 .section-wrap {
-    padding-left: 40px;
-    .section-main_roll {
-        ul {
-            display: flex;
-            overflow-x: scroll;
-            padding-top: 10px;
+  padding-left: 40px;
+  .section-main_roll {
+    ul {
+      display: flex;
+      overflow-x: scroll;
+      padding-top: 10px;
 
-            &::-webkit-scrollbar {
-                display: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      li {
+        min-width: 80%;
+        height: 100%;
+        border: 1px solid #ddd;
+        background-size: cover;
+        background-position: 0px 31%;
+        padding: 320px 0 55px 56px;
+        border-radius: 20px;
+        border: none;
+        margin-right: 67px;
+
+        > p {
+          font-size: 16px;
+          color: #fff;
+          font-weight: 300;
+          max-width: 900px;
+          line-height: 26px;
+
+          .main-roll-title {
+            font-size: 60px;
+            font-weight: bold;
+            line-height: 72px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          .pop-genre {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 25px;
+            padding-left: 10px;
+          }
+
+          .pop-subtitle {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            word-wrap: break-word;
+            height: 80px;
+            overflow: hidden;
+          }
+
+          .main-roll-playbtn {
+            background: #fff;
+            padding: 10px 15px 10px 40px;
+            display: inline-block;
+            color: #000;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 400;
+            background-image: url("../img/다각형\ 2@2x.png");
+            background-repeat: no-repeat;
+            background-size: 10px 16px;
+            background-position: 22px 11px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            margin-right: 16px;
+          }
+
+          .main-roll-addbtn {
+            background-color: rgba(255, 255, 255, 0);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 9px 15px 9px 40px;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 400;
+            display: inline-block;
+            background-image: url("../img/다각형\ 2@2x.png");
+            background-repeat: no-repeat;
+            background-size: 10px 16px;
+            background-position: 22px 11px;
+          }
+        }
+      }
+    }
+  }
+
+  .section-current-movies {
+    color: #222;
+
+    > p {
+      color: #fff;
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 59px;
+      padding: 80px 0 30px 0;
+    }
+
+    .section-current-roll {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      > div {
+        min-width: 20%;
+        max-width: 20%;
+        position: relative;
+        border-radius: 14px;
+        margin-right: 10px;
+
+        > img {
+          width: 100%;
+        }
+
+        .upcoming-box {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.7);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 14px;
+          padding: 20px 15px;
+
+          > div {
+            text-align: center;
+            height: 100%;
+            position: relative;
+
+            .title {
+              font-size: 30px;
+              font-weight: 500;
             }
 
-            li {
-                min-width: 80%;
-                height: 100%;
-                border: 1px solid #ddd;
-                background-size: cover;
-                background-position: 0px 31%;
-                padding: 320px 0 55px 56px;
-                border-radius: 20px;
+            .data-count {
+              padding-top: 10px;
+            }
+
+            .text {
+              position: absolute;
+              bottom: 50px;
+              text-align: left;
+              color: #333;
+
+              .genre {
+                padding-bottom: 5px;
+                font-weight: bold;
+              }
+
+              .subTitle {
+                height: 50px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+              }
+            }
+            .datil-view {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              button {
+                width: 100%;
+                background: #333;
                 border: none;
-                margin-right: 67px;
-
-                > p {
-                    font-size: 16px;
-                    color: #fff;
-                    font-weight: 300;
-                    max-width: 900px;
-                    line-height: 26px;
-
-                    .main-roll-title {
-                        font-size: 60px;
-                        font-weight: bold;
-                        line-height: 72px;
-                        display: block;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                    }
-
-                    .pop-genre {
-                        font-size: 24px;
-                        font-weight: 500;
-                        line-height: 25px;
-                        padding-left: 10px;
-                    }
-
-                    .pop-subtitle {
-                        display: -webkit-box;
-                        -webkit-line-clamp: 3;
-                        -webkit-box-orient: vertical;
-                        word-wrap: break-word;
-                        height: 80px;
-                        overflow: hidden;
-                    }
-
-                    .main-roll-playbtn {
-                        background: #fff;
-                        padding: 10px 15px 10px 40px;
-                        display: inline-block;
-                        color: #000;
-                        font-size: 16px;
-                        line-height: 16px;
-                        font-weight: 400;
-                        background-image: url("../img/다각형\ 2@2x.png");
-                        background-repeat: no-repeat;
-                        background-size: 10px 16px;
-                        background-position: 22px 11px;
-                        border-radius: 10px;
-                        box-sizing: border-box;
-                        margin-top: 20px;
-                        margin-right: 16px;
-                    }
-
-                    .main-roll-addbtn {
-                        background-color: rgba(255, 255, 255, 0);
-                        border: 2px solid #fff;
-                        border-radius: 10px;
-                        box-sizing: border-box;
-                        padding: 9px 15px 9px 40px;
-                        font-size: 16px;
-                        line-height: 16px;
-                        font-weight: 400;
-                        display: inline-block;
-                        background-image: url("../img/다각형\ 2@2x.png");
-                        background-repeat: no-repeat;
-                        background-size: 10px 16px;
-                        background-position: 22px 11px;
-                    }
-                }
+                color: #fff;
+                font-size: 20px;
+                font-weight: normal;
+                padding: 5px 0;
+                box-sizing: border-box;
+                border-radius: 5px;
+              }
             }
+          }
         }
+      }
+    }
+  }
+
+  .section-schedule-movies {
+    color: #222;
+
+    > p {
+      color: #fff;
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 59px;
+      padding: 80px 0 30px 0;
     }
 
-    .section-current-movies {
-        color: #222;
+    .section-schedule-roll {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
 
-        > p {
-            color: #fff;
-            font-size: 50px;
-            font-weight: bold;
-            line-height: 59px;
-            padding: 80px 0 30px 0;
-        }
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
-        .section-current-roll {
-            display: flex;
-            overflow-x: scroll;
-            overflow-y: hidden;
+      > div {
+        min-width: 400px;
+        height: 280px;
+        border-radius: 14px;
+        margin-right: 10px;
+        background-image: url("../img/우리집@2x.png");
+        background-size: cover;
+        background-position: 0 10%;
+        background-repeat: no-repeat;
+        position: relative;
 
-            &::-webkit-scrollbar {
-                display: none;
+        .schedule-text {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.7);
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 14px;
+          padding: 20px 15px;
+
+          > div {
+            text-align: center;
+            height: 100%;
+            position: relative;
+
+            .title {
+              font-size: 30px;
+              font-weight: 500;
             }
 
-            > div {
-                min-width: 20%;
-                max-width: 20%;
-                position: relative;
-                border-radius: 14px;
-                margin-right: 10px;
-
-                > img {
-                    width: 100%;
-                }
-
-                .upcoming-box {
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(255, 255, 255, 0.7);
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    border-radius: 14px;
-                    padding: 20px 15px;
-
-                    > div {
-                        text-align: center;
-                        height: 100%;
-                        position: relative;
-
-                        .title {
-                            font-size: 30px;
-                            font-weight: 500;
-                        }
-
-                        .data-count {
-                            padding-top: 10px;
-                        }
-
-                        .text {
-                            position: absolute;
-                            bottom: 50px;
-                            text-align: left;
-                            color:#333;
-
-                            .genre {
-                                padding-bottom: 5px;
-                                font-weight: bold;
-                            }
-
-                            .subTitle {
-                                height: 50px;
-                                overflow: hidden;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 3;
-                                -webkit-box-orient: vertical;
-                                word-wrap: break-word;
-                            }
-                        }
-                        .datil-view{
-                            position: absolute;
-                            bottom:0;
-                            width:100%;
-                            button{
-                                width: 100%;
-                                background: #333;
-                                border: none;
-                                color: #fff;
-                                font-size: 20px;
-                                font-weight: normal;
-                                padding: 5px 0;
-                                box-sizing: border-box;
-                                border-radius: 5px;
-                            }
-                        }
-                    }
-                }
+            .data-count {
+              padding-top: 10px;
             }
+
+            .text {
+              position: absolute;
+              bottom: 50px;
+              text-align: left;
+              color: #333;
+
+              .genre {
+                padding-bottom: 5px;
+                font-weight: bold;
+              }
+
+              .subTitle {
+                height: 48px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+              }
+            }
+            .datil-view {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              button {
+                width: 100%;
+                background: #333;
+                border: none;
+                color: #fff;
+                font-size: 20px;
+                font-weight: normal;
+                padding: 5px 0;
+                box-sizing: border-box;
+                border-radius: 5px;
+              }
+            }
+          }
         }
+      }
     }
-
-    .section-schedule-movies {
-        color: #222;
-
-        > p {
-            color: #fff;
-            font-size: 50px;
-            font-weight: bold;
-            line-height: 59px;
-            padding: 80px 0 30px 0;
-        }
-
-        .section-schedule-roll {
-            display: flex;
-            overflow-x: scroll;
-            overflow-y: hidden;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
-
-            > div {
-                min-width: 400px;
-                height: 280px;
-                border-radius: 14px;
-                margin-right: 10px;
-                background-image: url("../img/우리집@2x.png");
-                background-size: cover;
-                background-position: 0 10%;
-                background-repeat: no-repeat;
-                position: relative;
-
-                .schedule-text {
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(255, 255, 255, 0.7);
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    border-radius: 14px;
-                    padding: 20px 15px;
-
-                    > div {
-                        text-align: center;
-                        height: 100%;
-                        position: relative;
-
-                        .title {
-                            font-size: 30px;
-                            font-weight: 500;
-                        }
-
-                        .data-count {
-                            padding-top: 10px;
-                        }
-
-                        .text {
-                            position: absolute;
-                            bottom: 50px;
-                            text-align: left;
-                            color:#333;
-
-
-                            .genre {
-                                padding-bottom: 5px;
-                                font-weight: bold;
-                            }
-
-                            .subTitle {
-                                height: 48px;
-                                overflow: hidden;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 3;
-                                -webkit-box-orient: vertical;
-                                word-wrap: break-word;
-                            }
-                        }
-                        .datil-view{
-                            position: absolute;
-                            bottom:0;
-                            width:100%;
-                            button{
-                                width: 100%;
-                                background: #333;
-                                border: none;
-                                color: #fff;
-                                font-size: 20px;
-                                font-weight: normal;
-                                padding: 5px 0;
-                                box-sizing: border-box;
-                                border-radius: 5px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+  }
 }
