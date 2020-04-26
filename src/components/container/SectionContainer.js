@@ -37,7 +37,8 @@ class SectionContainer extends Component {
 
   render() {
     const loading = this.props.apiStore.isLoading;
-    console.log("sectionLoading", loading);
+    // section loading 확인
+    console.log("sectionLoading:::", loading);
     if (!this.state.error) {
       return (
         <Fragment>
