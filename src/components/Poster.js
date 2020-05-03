@@ -1,7 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
+import {Link} from "react-router-dom";
 
-const Poster = ({ data, genreData, fixedWidth }) => {
+const Poster = ({ data, genreData, diffWidth }) => {
   let settings = {
     arrows: true,
     dots: false,
@@ -12,11 +13,12 @@ const Poster = ({ data, genreData, fixedWidth }) => {
     lazyLode: "ondemand",
     rows: 1,
   };
-  if (fixedWidth) {
+  if (diffWidth) {
     settings = {
       ...settings,
-      variableWidth: true,
-      centerMode: true,
+      slidesToShow: 3,
+      // variableWidth: true,
+      // centerMode: true,
     };
   } else {
     settings = {
@@ -51,9 +53,11 @@ const Poster = ({ data, genreData, fixedWidth }) => {
                     </p>
                     <p className="subTitle">{info.overview}</p>
                   </div>
+                  <Link to={`/movie/${info.id}`}>
                   <div className="detail-view">
                     <button>more view</button>
                   </div>
+                  </Link>
                 </div>
               </div>
             </div>

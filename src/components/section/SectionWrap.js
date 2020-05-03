@@ -58,12 +58,12 @@ const SectionWrap = ({ popData, nowData, upcomeData, genreData }) => {
       {/* main-roll */}
       <div className="section-current-movies">
         <p>현재상영작</p>
-        <Poster data={nowData} genreData={genreData} fixedWidth={false} />
+        <Poster data={nowData} genreData={genreData} diffWidth={false} />
       </div>
       {/* 현재 상영작 */}
       <div className="section-schedule-movies">
         <p>개봉예정작</p>
-        <Poster data={upcomeData} genreData={genreData} fixedWidth={true} />
+        <Poster data={upcomeData} genreData={genreData} diffWidth={true} />
       </div>
       {/* 개봉 예정작 */}
     </section>

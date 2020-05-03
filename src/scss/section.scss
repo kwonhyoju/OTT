@@ -241,16 +241,21 @@
         display: none;
       }
       // roll 할 때 2행으로 나오는 문제
-      .slick-track {
-        display: flex;
-      }
+      // .slick-track {
+      //   display: flex;
+      // }
 
       .hover-container {
-        min-width: 400px;
+        // min-width: 400px;
+        // height: 280px;
+        // position: relative;
+        // border-radius: 14px;
+        // overflow: hidden;
         height: 280px;
-        position: relative;
         border-radius: 14px;
         overflow: hidden;
+        width: 20%;
+        position: relative;
         > img {
           width: 100%;
           border-radius: 14px;
