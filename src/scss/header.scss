@@ -210,6 +210,8 @@
                 padding: 0;
 
                 ul {
+                    border-bottom: 2px solid rgba(51, 51, 51, 0.5);
+                    margin-bottom:30px;
                     li {
                         text-align: center;
                         box-sizing: border-box;
@@ -225,7 +227,7 @@
                         }
                     }
 
-                    border-bottom: 2px solid rgba(51, 51, 51, 0.5);
+                    
                 }
             }
         }
