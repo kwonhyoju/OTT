@@ -6,6 +6,7 @@ class ApiStore {
   @observable nowData = {}; //현재상영작
   @observable upcomeData = {}; //개봉예정작
   @observable genreData = {};
+  @observable nowPlayHeight= null;
 
   @observable isLoading = false;
   @observable
@@ -81,6 +82,11 @@ class ApiStore {
         this.isLoading = true;
       })
       .catch((error) => console.log("getMovieDetail: ", error));
+  }
+
+  @action 
+  setNowPlayHeight(playHeight){
+    this.nowPlayHeight = playHeight;
   }
 }
 

@@ -20,7 +20,9 @@ class App extends Component {
   }
 
   handleWindowResize = () => {
+    const nowPlayHeight = document.getElementsByClassName("slick-track")[1].clientHeight;
     const mainWidth = this.mainApp.current.offsetWidth;
+
     if (mainWidth > 1200) {
       this.setState({
         active: "large",
@@ -34,6 +36,8 @@ class App extends Component {
         active: "small",
       });
     }
+    
+    this.props.apiStore.setNowPlayHeight(nowPlayHeight);
   };
 
   render() {
