@@ -36,8 +36,12 @@ class App extends Component {
         active: "small",
       });
     }
+
+    $(".hover-container").css("height",nowPlayHeight)
+
+    console.log("::A:::::",$(".hover-container").css("height"));
     
-    this.props.apiStore.setNowPlayHeight(nowPlayHeight);
+    // this.props.apiStore.setNowPlayHeight(nowPlayHeight);
   };
 
   render() {

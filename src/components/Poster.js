@@ -42,11 +42,8 @@ class Poster extends React.Component{
       <div className="section-roll">
         <Slider {...settings}>
           {data.map((info, index) => {
-            const test = {
-              height:"100px"
-            }
             return (
-              <div className="hover-container" key={index} style={{height:"100px"}}>
+              <div className="hover-container" key={index}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${info.poster_path}`}
                   alt=""
