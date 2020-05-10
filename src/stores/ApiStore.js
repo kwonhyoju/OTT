@@ -6,7 +6,7 @@ class ApiStore {
   @observable nowData = {}; //현재상영작
   @observable upcomeData = {}; //개봉예정작
   @observable genreData = {};
-  @observable nowPlayHeight= null;
+  @observable nowPlayWidth= null;
 
   @observable isLoading = false;
   @observable
@@ -85,8 +85,8 @@ class ApiStore {
   }
 
   @action 
-  setNowPlayHeight(playHeight){
-    this.nowPlayHeight = playHeight;
+  setNowPlayWidth(playWidth){
+    this.nowPlayWidth = playWidth;
   }
 }
 
