@@ -54,7 +54,7 @@ class Poster extends React.Component{
             return (
               <div className="hover-container" key={index}>
                 <img
-                  src={`https://image.tmdb.org/t/p/w500/${info.poster_path}`}
+                  src={`https://image.tmdb.org/t/p/w342/${info.poster_path}`}
                   alt=""
                 />
                 <div className="information-box">

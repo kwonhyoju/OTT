@@ -21,8 +21,8 @@ const mainRoll = (popData, genreData) => {
       <Slider {...settings}>
         {popData.map((pop, index) => {
           const bgImage = pop.backdrop_path
-            ? `https://image.tmdb.org/t/p/original/${pop.backdrop_path}`
-            : `https://image.tmdb.org/t/p/original/${pop.poster_path}`;
+            ? `https://image.tmdb.org/t/p/w780/${pop.backdrop_path}`
+            : `https://image.tmdb.org/t/p/w780/${pop.poster_path}`;
           return (
             <li key={index}>
               <img src={bgImage} alt="" />
