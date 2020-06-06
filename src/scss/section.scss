@@ -4,15 +4,14 @@
 // 스크롤 없애기
 // 호버 디자인
 
-// slide 사이 간격 지정
-.slick-slide {
+.slick-slide{
   padding: 0 10px;
 }
 
-// 개봉예정작 2행으로 나오는 버그 방지
-// .slick-track {
-//   display: flex;
-// }
+// 카드 눌렀을 때 흰 테두리 제거
+div:focus{
+  outline: none;
+}
 
 .section-wrap {
   padding: 0 40px;
@@ -137,14 +136,25 @@
       //   display: flex;
       //   overflow-x: scroll;
       //   overflow-y: hidden;
-
       &::-webkit-scrollbar {
         display: none;
+      }
+
+      // height 맞추기
+      .slick-initialized .slick-track{
+        display: flex;
+        align-items: stretch;
+        .slick-slide{
+          display: flex;
+          height: auto;
+        }
       }
 
       .hover-container {
         // min-width: 20%;
         // max-width: 20%;
+        // height: 100% 슬라이드 height 맞추기
+        height: 100%;
         width: 20%;
         position: relative;
         // margin-right: 10px;

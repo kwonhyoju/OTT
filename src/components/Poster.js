@@ -14,11 +14,11 @@ class Poster extends React.Component{
     window.addEventListener("resize", this.testResize);
   }
 
-  testResize=()=>{
-    const nowWidth = this.props.apiStore.nowPlayWidth;
-    const changeHeight = parseFloat(nowWidth)*1.5;
-    $(".hover-container").css("height",changeHeight);
-  }
+  // testResize=()=>{
+  //   const nowWidth = this.props.apiStore.nowPlayWidth;
+  //   const changeHeight = parseFloat(nowWidth)*1.5;
+  //   $(".hover-container").css("height",changeHeight);
+  // }
 
   render(){
     const {data, genreData, diffWidth}= this.props;

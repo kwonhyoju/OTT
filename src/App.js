@@ -20,9 +20,9 @@ class App extends Component {
   }
 
   handleWindowResize = () => {
-    const nowPlayHeight = document.getElementsByClassName("slick-track")[1].clientHeight;
+    // const nowPlayHeight = document.getElementsByClassName("slick-track")[1].clientHeight;
 
-    const nowPlayWidth= $(".hover-container").css("width");
+    // const nowPlayWidth= $(".hover-container").css("width");
 
 
     // height가 처음 slick track의 height를 가져와서 hover-container에 집어넣다보니 처음 제일 큰 height를 유지함 
@@ -43,7 +43,7 @@ class App extends Component {
       });
     }
 
-    this.props.apiStore.setNowPlayWidth(nowPlayWidth);
+    // this.props.apiStore.setNowPlayWidth(nowPlayWidth);
   };
 
   render() {
