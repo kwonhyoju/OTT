@@ -3,8 +3,9 @@
 // 폰트 패밀리 적용
 // 스크롤 없애기
 
-.slick-slide{
-  padding: 0 10px;
+// slide 사이 간격 지정
+.slick-slide {
+    padding: 0 10px;
 }
 
 // 카드 눌렀을 때 흰 테두리 제거
@@ -16,12 +17,7 @@ div:focus{
   padding: 0 40px;
   .section-main_roll {
     ul {
-      // display: flex;
-      // overflow-x: scroll;
-      // padding-top: 10px;
-
       &::-webkit-scrollbar {
-        // display: none;
       }
       .slick-slide {
         padding: 0 20px;
@@ -38,7 +34,6 @@ div:focus{
         overflow: hidden;
         position: relative;
 
-        // margin-right: 67px;
         > img {
           position: absolute;
           top: 0;
@@ -132,9 +127,6 @@ div:focus{
     }
 
     .section-roll {
-      //   display: flex;
-      //   overflow-x: scroll;
-      //   overflow-y: hidden;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -150,9 +142,6 @@ div:focus{
       }
 
       .hover-container {
-        // min-width: 20%;
-        // max-width: 20%;
-        // height: 100% 슬라이드 height 맞추기
         height: 100%;
         width: 20%;
         position: relative;
