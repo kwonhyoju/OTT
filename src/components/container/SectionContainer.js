@@ -16,9 +16,6 @@ class SectionContainer extends Component {
 
   componentWillMount() {
     this.props.apiStore.setLoading();
-  }
-
-  componentDidMount() {
     try {
       this.props.apiStore.popularData();
       this.props.apiStore.nowpalyData();
@@ -31,9 +28,8 @@ class SectionContainer extends Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   this.props.apiStore.setLoading();
-  // }
+  componentDidMount() {
+  }
 
   render() {
     const loading = this.props.apiStore.isLoading;
