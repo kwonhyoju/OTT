@@ -1,0 +1,32 @@
+.detail-container-wrapper {
+  margin: 120px 50px 0 50px;
+  .detail-container {
+    display: flex;
+    .detail-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .detail-right {
+      color: white;
+      margin-left: 20px;
+      text-align: right;
+      .detail-title {
+        font-size: 40px;
+        font-weight: 600px;
+      }
+      .detail-tagline {
+        font-size: 20px;
+        font-style: italic;
+        opacity: 80%;
+      }
+      .detail-genres {
+        display: flex;
+        justify-content: flex-end;
+        .detail-genre {
+          padding-left: 50px;
+        }
+      }
+    }
+  }
+}

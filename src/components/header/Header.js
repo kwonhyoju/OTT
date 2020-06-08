@@ -35,9 +35,11 @@ class Header extends Component {
               </ul>
             </div>
             {/* moblie ver gnb */}
-            <div className="header-logo">
-              <Logo />
-            </div>
+            <Link to={"/"}>
+              <div className="header-logo">
+                <Logo />
+              </div>
+            </Link>
             <div className="header-gnb">
               <ul>
                 <li>박스오피스</li>
