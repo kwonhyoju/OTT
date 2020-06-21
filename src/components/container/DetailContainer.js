@@ -44,7 +44,6 @@ class DetailContainer extends Component {
       return (
         <>
           {loading ? <DetailWrap movieDetail={movieDetail} /> : <Loading />}
-          );
         </>
       );
     } else {
