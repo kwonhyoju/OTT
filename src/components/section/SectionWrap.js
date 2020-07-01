@@ -52,18 +52,41 @@ const mainRoll = (popData, genreData) => {
 };
 
 const SectionWrap = ({ popData, nowData, upcomeData, genreData }) => {
+
+  const popSortingData =[];
+  const nowSortingData =[];
+  const upcomeSortingData =[];
+
+  popData.map((info)=>{
+    if(info.adult===false){
+     return popSortingData.push(info);
+    }
+  });
+
+  nowData.map((info)=>{
+    if(info.adult===false){
+     return nowSortingData.push(info);
+    }
+  });
+
+  upcomeData.map((info)=>{
+    if(info.adult===false){
+     return upcomeSortingData.push(info);
+    }
+  });
+
   return (
     <section className="section-wrap">
-      <div className="section-main_roll">{mainRoll(popData, genreData)}</div>
+      <div className="section-main_roll">{mainRoll(popSortingData, genreData)}</div>
       {/* main-roll */}
       <div className="section-current-movies">
         <p>현재상영작</p>
-        <Poster data={nowData} genreData={genreData} diffWidth={false} />
+        <Poster data={nowSortingData} genreData={genreData} diffWidth={false} />
       </div>
       {/* 현재 상영작 */}
       <div className="section-schedule-movies">
         <p>개봉예정작</p>
-        <Poster data={upcomeData} genreData={genreData} diffWidth={true} />
+        <Poster data={upcomeSortingData} genreData={genreData} diffWidth={true} />
       </div>
       {/* 개봉 예정작 */}
     </section>
