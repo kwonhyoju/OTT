@@ -14,7 +14,6 @@ class SectionContainer extends Component {
     };
   }
 
-  
   componentWillMount() {
     this.props.apiStore.setLoading();
     try {

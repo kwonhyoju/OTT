@@ -42,10 +42,9 @@ class Header extends Component {
             </Link>
             <div className="header-gnb">
               <ul>
-                <li>박스오피스</li>
-                <li>영화정보</li>
-                <li>영화사정보</li>
-                <li>영화인정보</li>
+                <li>일별 랭킹</li>
+                <li>주간 랭킹</li>
+                <li>주말 랭킹</li>
               </ul>
             </div>
             {/* pc ver gnb */}

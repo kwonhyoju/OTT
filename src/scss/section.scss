@@ -64,6 +64,7 @@ button {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            text-shadow: 1px 1px 1px #000;
           }
 
           .pop-genre {
@@ -71,6 +72,7 @@ button {
             font-weight: 500;
             line-height: 25px;
             padding-left: 10px;
+            text-shadow: 1px 1px 1px #000;
           }
 
           .pop-subtitle {
@@ -80,6 +82,7 @@ button {
             word-wrap: break-word;
             height: 80px;
             overflow: hidden;
+            text-shadow: 1px 1px 1px #000;
           }
 
           .main-roll-playbtn {
@@ -98,6 +101,7 @@ button {
             box-sizing: border-box;
             margin-top: 20px;
             margin-right: 16px;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.5);
           }
 
           .main-roll-addbtn {
@@ -114,6 +118,8 @@ button {
             background-repeat: no-repeat;
             background-size: 10px 16px;
             background-position: 22px 11px;
+            text-shadow: 1px 1px 1px #000;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.5);
           }
         }
       }
