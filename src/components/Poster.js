@@ -44,6 +44,7 @@ class Poster extends React.Component {
       <div className="section-roll">
         <Slider {...settings}>
           {data.map((info, index) => {
+            if(!info.adult){
             return (
               <div className="hover-container" key={index}>
                 <img
@@ -77,6 +78,7 @@ class Poster extends React.Component {
                 </div>
               </div>
             );
+          }
           })}
         </Slider>
       </div>

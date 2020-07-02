@@ -2,6 +2,8 @@ import { observable, action } from "mobx";
 import axios from "axios";
 
 class ApiStore {
+    @observable loadingApi = [];//data setting
+
     @observable popData = {}; //main_roll
     @observable nowData = {}; //현재상영작
     @observable upcomeData = {}; //개봉예정작
@@ -21,7 +23,7 @@ class ApiStore {
     //isLoading false로 초기화하는 함수
     @action
     setLoading() {
-        this.isLoading = false;
+        this.loadingApi = [];
     }
 
     //mainRoll
@@ -31,6 +33,7 @@ class ApiStore {
             .get(`movie/popular`)
             .then((res) => {
                 this.popData = res.data.results;
+                this.loadingApi.push("popularData");
             })
             .catch((error) => console.log("error: " + error));
     }
@@ -42,6 +45,7 @@ class ApiStore {
             .get(`movie/now_playing`)
             .then((res) => {
                 this.nowData = res.data.results;
+                this.loadingApi.push("nowplayData");
             })
             .catch((error) => console.log("error: " + error));
     }
@@ -53,7 +57,7 @@ class ApiStore {
             .get(`movie/upcoming`)
             .then((res) => {
                 this.upcomeData = res.data.results;
-                this.isLoading = true;
+                this.loadingApi.push("upcomingData");
             })
             .catch((error) => console.log("error: " + error));
     }
@@ -65,6 +69,7 @@ class ApiStore {
             .get("/genre/movie/list")
             .then((res) => {
                 this.genreData = res.data.genres;
+                this.loadingApi.push("genreData");
             })
             .catch((error) => {
                 console.log("error: " + error);
@@ -83,7 +88,7 @@ class ApiStore {
             .then((res) => {
                 this.movieDetail = res.data;
                 console.log("movieDetail", this.movieDetail);
-                this.isLoading = true;
+                this.loadingApi.push("movieDetail");
             })
             .catch((error) => console.log("getMovieDetail: ", error));
     }

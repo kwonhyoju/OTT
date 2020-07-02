@@ -32,13 +32,13 @@ class SectionContainer extends Component {
   }
 
   render() {
-    const loading = this.props.apiStore.isLoading;
+    const loading = this.props.apiStore.loadingApi;
     // section loading 확인
     // console.log("sectionLoading:::", loading);
     if (!this.state.error) {
       return (
         <Fragment>
-          {loading ? (
+          {loading.length === 4 ? (
             <SectionWrap
               popData={this.props.apiStore.popData}
               nowData={this.props.apiStore.nowData}

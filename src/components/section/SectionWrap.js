@@ -20,6 +20,7 @@ const mainRoll = (popData, genreData) => {
     <ul>
       <Slider {...settings}>
         {popData.map((pop, index) => {
+          if(!pop.adult){
           const bgImage = pop.backdrop_path
             ? `https://image.tmdb.org/t/p/w780/${pop.backdrop_path}`
             : `https://image.tmdb.org/t/p/w780/${pop.poster_path}`;
@@ -45,6 +46,7 @@ const mainRoll = (popData, genreData) => {
               </p>
             </li>
           );
+        }
         })}
       </Slider>
     </ul>

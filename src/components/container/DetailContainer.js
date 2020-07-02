@@ -36,14 +36,14 @@ class DetailContainer extends Component {
   // }
 
   render() {
-    const { isLoading: loading, movieDetail } = this.props.apiStore;
+    const { loadingApi: loading, movieDetail } = this.props.apiStore;
     //상세페이지 데이터
     console.log("movieDetail::::", movieDetail);
     console.log("detailLoading::::", loading);
     if (!this.state.error) {
       return (
         <>
-          {loading ? <DetailWrap movieDetail={movieDetail} /> : <Loading />}
+          {loading.length === 1 ? <DetailWrap movieDetail={movieDetail} /> : <Loading />}
         </>
       );
     } else {
