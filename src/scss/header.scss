@@ -35,6 +35,11 @@
               padding-right: 0;
             }
           }
+          a.active {
+            li {
+              color: #2ecac5;
+            }
+          }
         }
       }
     }
@@ -211,6 +216,12 @@
         ul {
           border-bottom: 2px solid rgba(51, 51, 51, 0.5);
           margin-bottom: 30px;
+          a.active {
+            li {
+              background: #eee;
+              color: #333;
+            }
+          }
           li {
             text-align: center;
             box-sizing: border-box;

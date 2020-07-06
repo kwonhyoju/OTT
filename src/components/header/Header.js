@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../../svg/Logo";
 
 class Header extends Component {
@@ -35,22 +35,22 @@ class Header extends Component {
               </ul>
             </div>
             {/* moblie ver gnb */}
-            <Link to={"/"}>
+            <NavLink to={"/"}>
               <div className="header-logo">
                 <Logo />
               </div>
-            </Link>
+            </NavLink>
             <div className="header-gnb">
               <ul>
-                <Link to={"/boxoffice/daily"}>
+                <NavLink to={"/boxoffice/daily"} activeClassName="active">
                   <li>일별 랭킹</li>
-                </Link>
-                <Link to={"/boxoffice/week"}>
+                </NavLink>
+                <NavLink to={"/boxoffice/week"} activeClassName="active">
                   <li>주간 랭킹</li>
-                </Link>
-                <Link to={"/boxoffice/weekend"}>
+                </NavLink>
+                <NavLink to={"/boxoffice/weekend"} activeClassName="active">
                   <li>주말 랭킹</li>
-                </Link>
+                </NavLink>
               </ul>
             </div>
             {/* pc ver gnb */}
@@ -72,15 +72,15 @@ class Header extends Component {
           <ul>
             <li>로그인</li>
             <li>회원가입</li>
-            <Link to={"/boxoffice/daily"}>
+            <NavLink to={"/boxoffice/daily"} activeClassName="active">
               <li>일별 랭킹</li>
-            </Link>
-            <Link to={"/boxoffice/week"}>
+            </NavLink>
+            <NavLink to={"/boxoffice/week"} activeClassName="active">
               <li>주간 랭킹</li>
-            </Link>
-            <Link to={"/boxoffice/weekend"}>
+            </NavLink>
+            <NavLink to={"/boxoffice/weekend"} activeClassName="active">
               <li>주말 랭킹</li>
-            </Link>
+            </NavLink>
           </ul>
         </div>
       </header>
