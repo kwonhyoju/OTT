@@ -42,9 +42,15 @@ class Header extends Component {
             </Link>
             <div className="header-gnb">
               <ul>
-                <li>일별 랭킹</li>
-                <li>주간 랭킹</li>
-                <li>주말 랭킹</li>
+                <Link to={"/boxoffice/daily"}>
+                  <li>일별 랭킹</li>
+                </Link>
+                <Link to={"/boxoffice/week"}>
+                  <li>주간 랭킹</li>
+                </Link>
+                <Link to={"/boxoffice/weekend"}>
+                  <li>주말 랭킹</li>
+                </Link>
               </ul>
             </div>
             {/* pc ver gnb */}
@@ -66,10 +72,15 @@ class Header extends Component {
           <ul>
             <li>로그인</li>
             <li>회원가입</li>
-            <li>박스오피스</li>
-            <li>영화정보</li>
-            <li>영화사정보</li>
-            <li>영화인정보</li>
+            <Link to={"/boxoffice/daily"}>
+              <li>일별 랭킹</li>
+            </Link>
+            <Link to={"/boxoffice/week"}>
+              <li>주간 랭킹</li>
+            </Link>
+            <Link to={"/boxoffice/weekend"}>
+              <li>주말 랭킹</li>
+            </Link>
           </ul>
         </div>
       </header>
