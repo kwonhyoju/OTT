@@ -21,15 +21,23 @@
       }
 
       .header-gnb {
+        height: 100%;
         ul {
+          height: 100%;
           display: flex;
           justify-content: space-between;
           a {
             li {
+              height: 100%;
+              display: flex;
+              align-items: center;
               color: #fff;
               font-size: 14px;
               font-weight: 300;
               padding-right: 35px;
+              &:hover {
+                color: #2ecac5;
+              }
             }
             &:last-child > li {
               padding-right: 0;
