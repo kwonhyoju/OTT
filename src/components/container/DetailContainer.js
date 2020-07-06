@@ -30,10 +30,6 @@ class DetailContainer extends Component {
       this.setState = { error: true };
     }
   }
-  // componentWillUnmount() {
-  //   this.props.apiStore.setLoading();
-  //   console.log(this.props.apiStore.isLoading);
-  // }
 
   render() {
     const { loadingApi: loading, movieDetail } = this.props.apiStore;
@@ -43,7 +39,11 @@ class DetailContainer extends Component {
     if (!this.state.error) {
       return (
         <>
-          {loading.length === 1 ? <DetailWrap movieDetail={movieDetail} /> : <Loading />}
+          {loading.length === 1 ? (
+            <DetailWrap movieDetail={movieDetail} />
+          ) : (
+            <Loading />
+          )}
         </>
       );
     } else {

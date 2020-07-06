@@ -2,6 +2,10 @@ import { observable, action } from "mobx";
 import axios from "axios";
 
 class BoxOfficeStore {
+  @observable isLoading = false;
+
+  @observable boxOfficeData = null;
+
   @observable
   boxofficeApi = axios.create({
     baseURL: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice",
@@ -12,11 +16,16 @@ class BoxOfficeStore {
   });
 
   @action
+  setLoading() {
+    this.isLoading = false;
+  }
+
+  @action
   yesterdayDate() {
     const date = new Date();
     let year = date.getFullYear();
-    let month = date.getMonth();
-    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let day = date.getDate() - 1;
     let yesterday =
       year +
       `${month < 10 ? "0" + month : month}` +
@@ -24,20 +33,15 @@ class BoxOfficeStore {
     return yesterday;
   }
 
-  @action getDailyBoxoffice() {
+  @action getDailyBoxOffice() {
     this.boxofficeApi
       .get("/searchDailyBoxOfficeList.json")
       .then((res) => {
-        console.log(res);
+        console.log("dailyBoxOffice", res.data.boxOfficeResult);
+        this.boxOfficeData = res.data.boxOfficeResult;
+        this.isLoading = true;
       })
       .catch((error) => console.log("getDailyBoxOffice: ", error));
-  }
-
-  @action getWeekendBoxOffice() {
-    this.boxofficeApi
-      .get("/searchWeeklyBoxOfficeList.json")
-      .then((res) => console.log(res))
-      .catch((error) => console.log("getWeekendBoxOffice", error));
   }
 
   @action getWeekBoxOffice() {
@@ -47,8 +51,23 @@ class BoxOfficeStore {
           weekGb: "0",
         },
       })
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log("weekBoxOffice", res.data.boxOfficeResult);
+        this.boxOfficeData = res.data.boxOfficeResult;
+        this.isLoading = true;
+      })
       .catch((error) => console.log("getWeekBoxOffice", error));
+  }
+
+  @action getWeekendBoxOffice() {
+    this.boxofficeApi
+      .get("/searchWeeklyBoxOfficeList.json")
+      .then((res) => {
+        console.log("weekendBoxOffice", res.data.boxOfficeResult);
+        this.boxOfficeData = res.data.boxOfficeResult;
+        this.isLoading = true;
+      })
+      .catch((error) => console.log("getWeekendBoxOffice", error));
   }
 }
 
