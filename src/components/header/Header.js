@@ -44,14 +44,20 @@ class Header extends Component {
                         <div className="header-gnb">
                             <ul>
                                 <li>
-                                    <Link to={`/test`}>일별 랭킹</Link>
+                                    <Link to={`/test/20200701/today`}>
+                                        일별 랭킹
+                                    </Link>
                                 </li>
 
                                 <li>
-                                    <Link to={`/test`}>주간 랭킹</Link>
+                                    <Link to={`/test/20200702/week`}>
+                                        주중 랭킹
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link to={`/test`}>주말 랭킹</Link>
+                                    <Link to={`/test/20200703/weekend`}>
+                                        주말 랭킹
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
