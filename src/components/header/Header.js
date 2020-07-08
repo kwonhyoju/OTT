@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../svg/Logo";
+import moment from "moment";
 
 class Header extends Component {
     constructor(props) {
@@ -18,6 +19,8 @@ class Header extends Component {
     };
 
     render() {
+        const today = moment().subtract(1, "days").format(`YYYYMMDD`);
+        const weekly = moment().subtract(6, "days").format(`YYYYMMDD`);
         return (
             <header
                 className={`header ${
@@ -44,18 +47,17 @@ class Header extends Component {
                         <div className="header-gnb">
                             <ul>
                                 <li>
-                                    <Link to={`/test/20200701/today`}>
+                                    <Link to={`/test/${today}/today`}>
                                         일별 랭킹
                                     </Link>
                                 </li>
-
                                 <li>
-                                    <Link to={`/test/20200702/week`}>
+                                    <Link to={`/test/${weekly}/week`}>
                                         주중 랭킹
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to={`/test/20200703/weekend`}>
+                                    <Link to={`/test/${weekly}/weekend`}>
                                         주말 랭킹
                                     </Link>
                                 </li>
