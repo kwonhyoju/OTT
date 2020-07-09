@@ -28,7 +28,6 @@ class DailyContainer extends Component {
 
   render() {
     const { isLoading: loading, boxOfficeData } = this.props.boxOfficeStore;
-    console.log(loading, boxOfficeData);
     if (!this.state.error) {
       return (
         <>

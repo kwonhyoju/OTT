@@ -18,6 +18,11 @@ class Header extends Component {
   };
 
   render() {
+    // const hamburger = document.getElementById("hamburger").checked;
+    // console.log(hamburger);
+    // if (this.state.changeHeader === "") {
+    //   hamburger.checked = false;
+    // }
     return (
       <header
         className={`header ${
@@ -28,7 +33,11 @@ class Header extends Component {
           <div className="header-left-box">
             <div className="header-mo-gnb">
               <ul>
-                <input type="checkbox" onClick={this.setMobileMwnu}></input>
+                <input
+                  type="checkbox"
+                  id="hamburger"
+                  onClick={this.setMobileMwnu}
+                ></input>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -72,13 +81,25 @@ class Header extends Component {
           <ul>
             <li>로그인</li>
             <li>회원가입</li>
-            <NavLink to={"/boxoffice/daily"} activeClassName="active">
+            <NavLink
+              to={"/boxoffice/daily"}
+              onClick={this.setMobileMwnu}
+              activeClassName="active"
+            >
               <li>일별 랭킹</li>
             </NavLink>
-            <NavLink to={"/boxoffice/week"} activeClassName="active">
+            <NavLink
+              to={"/boxoffice/week"}
+              onClick={this.setMobileMwnu}
+              activeClassName="active"
+            >
               <li>주간 랭킹</li>
             </NavLink>
-            <NavLink to={"/boxoffice/weekend"} activeClassName="active">
+            <NavLink
+              to={"/boxoffice/weekend"}
+              onClick={this.setMobileMwnu}
+              activeClassName="active"
+            >
               <li>주말 랭킹</li>
             </NavLink>
           </ul>
