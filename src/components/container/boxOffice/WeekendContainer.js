@@ -6,7 +6,7 @@ import { inject, observer } from "mobx-react";
 
 @inject("boxOfficeStore")
 @observer
-class DailyContainer extends Component {
+class WeekendContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,4 +44,4 @@ class DailyContainer extends Component {
   }
 }
 
-export default DailyContainer;
+export default WeekendContainer;
