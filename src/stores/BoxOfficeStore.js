@@ -4,7 +4,7 @@ import axios from "axios";
 class BoxOfficeStore {
   @observable isLoading = false;
 
-  @observable boxOfficeData = null;
+  @observable boxOfficeData = {};
 
   @observable
   boxofficeApi = axios.create({
