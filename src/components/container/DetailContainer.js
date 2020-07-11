@@ -17,23 +17,19 @@ class DetailContainer extends Component {
   componentWillMount() {
     this.props.apiStore.setLoading();
   }
+  
   componentDidMount() {
     const {
       match: {
         params: { id },
       },
     } = this.props;
-    // console.log(":::match", this.props.match);
     try {
       this.props.apiStore.getMovieDetail(id);
     } catch (e) {
       this.setState = { error: true };
     }
   }
-  // componentWillUnmount() {
-  //   this.props.apiStore.setLoading();
-  //   console.log(this.props.apiStore.isLoading);
-  // }
 
   render() {
     const { loadingApi: loading, movieDetail } = this.props.apiStore;
