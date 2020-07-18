@@ -1,0 +1,62 @@
+.boxOffice-wrap{
+    background: #ededed;
+    padding:50px 268px 40px;
+    box-sizing:border-box;
+    color:#333;
+
+    .boxOffice-title{
+        font-size:24px;
+        font-weight:bold;
+        padding-bottom:20px;
+    }
+
+    .boxOffice-rank{
+        .rank-box{
+            >div{
+                background: #0a0e10;
+                color:#ededed;
+                border-radius:6px;
+                display:flex;
+                justify-content: space-between;
+                padding:20px 24px;
+                margin-bottom:10px;
+
+                .movie-text{
+                    display:flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .m-rank{
+                        font-size:22px;
+                        padding-right:22px;
+                    }
+                    .m-title{
+                        >span{
+                            display:block;
+                            font-size:24px;
+                            &:nth-child(2){
+                                font-size:14px;
+                                padding-top:8px;
+                            }
+                        }
+                    }
+                }
+
+                .movie-detail-btn{
+                    display:flex;
+                    justify-content: flex-end;
+                    align-items:center;
+                    >p{
+                        background: #ededed;
+                        border-radius:3px;
+                        color:#0a0e10;
+                        font-size:12px;
+                        padding:2px 4px 3px;
+                    }
+                    >div{
+                        padding-left:10px;
+                    }
+                }
+            }
+        }
+    }
+}

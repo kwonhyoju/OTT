@@ -81,20 +81,60 @@ class BoxOfficeWrap extends Component {
         }
     }
 
+    rankView=(data)=>{
+        return(
+        <div className="rank-box">
+            {data.boxofficeType === "일별 박스오피스"?
+                data.dailyBoxOfficeList.map((info,index)=>{
+                    return(
+                    <div key={index}>
+                        <div className="movie-text">
+                            <p className="m-rank">{info.rnum}</p>
+                            <p className="m-title"><span>{info.movieNm}</span><span>{info.openDt}</span></p>
+                        </div>
+                        <div className="movie-detail-btn">
+                            {info.rankOldAndNew==="NEW"?<p>new</p>:""}
+                            <div>
+                                <i className="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </div>);
+            }):data.weeklyBoxOfficeList.map((info,index)=>{
+                return(
+                <div key={index}>
+                    <div className="movie-text">
+                            <p className="m-rank">{info.rnum}</p>
+                            <p className="m-title"><span>{info.movieNm}</span><span>{info.openDt}</span></p>
+                        </div>
+                    <div className="movie-detail-btn">
+                            {info.rankOldAndNew==="NEW"?<p>new</p>:""}
+                            <div>
+                                <i className="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                </div>);
+        })}
+        </div>
+        );
+    }
+
     render() {
-        console.log("render_data::::::::", this.state.data);
         const weekOfMonth = (m) =>
             m.week() - moment(m).startOf("month").week() + 1;
         const nowDate = moment().utc(true);
+
         return this.state.propsCheck || !this.state.data ? (
             <Loading />
         ) : (
-            <div style={{ color: "#fff" }}>
-                <p>
+            <div className="boxOffice-wrap">
+                <p className="boxOffice-title">
                     {this.state.data.boxofficeType === "일별 박스오피스"
                         ? moment().format(`YY / MM / DD`)
-                        : weekOfMonth(nowDate) + "주차"}
+                        :moment().format(`MM`)+"월 "+ weekOfMonth(nowDate) + "주차"}
                 </p>
+                <div className="boxOffice-rank">
+                    {this.rankView(this.state.data)}
+                </div>
             </div>
         );
     }
