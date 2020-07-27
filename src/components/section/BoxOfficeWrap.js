@@ -81,42 +81,63 @@ class BoxOfficeWrap extends Component {
         }
     }
 
-    rankView=(data)=>{
-        return(
-        <div className="rank-box">
-            {data.boxofficeType === "일별 박스오피스"?
-                data.dailyBoxOfficeList.map((info,index)=>{
-                    return(
-                    <div key={index}>
-                        <div className="movie-text">
-                            <p className="m-rank">{info.rnum}</p>
-                            <p className="m-title"><span>{info.movieNm}</span><span>{info.openDt}</span></p>
-                        </div>
-                        <div className="movie-detail-btn">
-                            {info.rankOldAndNew==="NEW"?<p>new</p>:""}
-                            <div>
-                                <i className="fas fa-chevron-right"></i>
-                            </div>
-                        </div>
-                    </div>);
-            }):data.weeklyBoxOfficeList.map((info,index)=>{
-                return(
-                <div key={index}>
-                    <div className="movie-text">
-                            <p className="m-rank">{info.rnum}</p>
-                            <p className="m-title"><span>{info.movieNm}</span><span>{info.openDt}</span></p>
-                        </div>
-                    <div className="movie-detail-btn">
-                            {info.rankOldAndNew==="NEW"?<p>new</p>:""}
-                            <div>
-                                <i className="fas fa-chevron-right"></i>
-                            </div>
-                        </div>
-                </div>);
-        })}
-        </div>
+    rankView = (data) => {
+        return (
+            <div className="rank-box">
+                {data.boxofficeType === "일별 박스오피스"
+                    ? data.dailyBoxOfficeList.map((info, index) => {
+                          console.log("::::A::::", info);
+                          return (
+                              <div key={index}>
+                                  <div className="movie-text">
+                                      <p className="m-rank">{info.rnum}</p>
+                                      <p className="m-title">
+                                          <span>{info.movieNm}</span>
+                                          <span>{info.openDt}</span>
+                                      </p>
+                                  </div>
+                                  <div className="movie-detail-btn">
+                                      <div>{info.audiAcc} 명</div>
+                                  </div>
+                                  {/* <div className="movie-detail-btn">
+                                      {info.rankOldAndNew === "NEW" ? (
+                                          <p>new</p>
+                                      ) : (
+                                          ""
+                                      )}
+                                      <div>
+                                          <i className="fas fa-chevron-right"></i>
+                                      </div>
+                                  </div> */}
+                              </div>
+                          );
+                      })
+                    : data.weeklyBoxOfficeList.map((info, index) => {
+                          return (
+                              <div key={index}>
+                                  <div className="movie-text">
+                                      <p className="m-rank">{info.rnum}</p>
+                                      <p className="m-title">
+                                          <span>{info.movieNm}</span>
+                                          <span>{info.openDt}</span>
+                                      </p>
+                                  </div>
+                                  <div className="movie-detail-btn">
+                                      {info.rankOldAndNew === "NEW" ? (
+                                          <p>new</p>
+                                      ) : (
+                                          ""
+                                      )}
+                                      <div>
+                                          <i className="fas fa-chevron-right"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          );
+                      })}
+            </div>
         );
-    }
+    };
 
     render() {
         const weekOfMonth = (m) =>
@@ -129,10 +150,18 @@ class BoxOfficeWrap extends Component {
             <div className="boxOffice-wrap">
                 <p className="boxOffice-title">
                     {this.state.data.boxofficeType === "일별 박스오피스"
-                        ? moment().format(`YY / MM / DD`)
-                        :moment().format(`MM`)+"월 "+ weekOfMonth(nowDate) + "주차"}
+                        ? // ? moment().format(`YY / MM / DD`)
+                          moment().format(` MM / DD`)
+                        : moment().format(`MM`) +
+                          "월 " +
+                          weekOfMonth(nowDate) +
+                          "주차"}
                 </p>
                 <div className="boxOffice-rank">
+                    <div className="rank-title-box">
+                        <div>제목</div>
+                        <div>누적 관객수</div>
+                    </div>
                     {this.rankView(this.state.data)}
                 </div>
             </div>
