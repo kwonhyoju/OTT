@@ -44,16 +44,18 @@
                     justify-content: flex-start;
                     align-items: center;
                     .m-rank {
-                        font-size: 22px;
+                        font-size: 18px;
                         padding-right: 22px;
                     }
                     .m-title {
                         > span {
                             display: block;
                             font-size: 24px;
+                            font-weight: bold;
                             &:nth-child(2) {
                                 font-size: 14px;
                                 padding-top: 8px;
+                                font-weight: 400;
                             }
                         }
                     }
@@ -72,6 +74,9 @@
                     }
                     > div {
                         padding-left: 10px;
+                        > span {
+                            font-size: 13px;
+                        }
                     }
                 }
             }

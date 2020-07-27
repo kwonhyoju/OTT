@@ -86,7 +86,6 @@ class BoxOfficeWrap extends Component {
             <div className="rank-box">
                 {data.boxofficeType === "일별 박스오피스"
                     ? data.dailyBoxOfficeList.map((info, index) => {
-                          console.log("::::A::::", info);
                           return (
                               <div key={index}>
                                   <div className="movie-text">
@@ -97,7 +96,9 @@ class BoxOfficeWrap extends Component {
                                       </p>
                                   </div>
                                   <div className="movie-detail-btn">
-                                      <div>{info.audiAcc} 명</div>
+                                      <div>
+                                          {info.audiAcc} <span>명</span>
+                                      </div>
                                   </div>
                                   {/* <div className="movie-detail-btn">
                                       {info.rankOldAndNew === "NEW" ? (
@@ -123,6 +124,11 @@ class BoxOfficeWrap extends Component {
                                       </p>
                                   </div>
                                   <div className="movie-detail-btn">
+                                      <div>
+                                          {info.audiAcc} <span>명</span>
+                                      </div>
+                                  </div>
+                                  {/* <div className="movie-detail-btn">
                                       {info.rankOldAndNew === "NEW" ? (
                                           <p>new</p>
                                       ) : (
@@ -131,7 +137,7 @@ class BoxOfficeWrap extends Component {
                                       <div>
                                           <i className="fas fa-chevron-right"></i>
                                       </div>
-                                  </div>
+                                  </div> */}
                               </div>
                           );
                       })}
@@ -151,11 +157,11 @@ class BoxOfficeWrap extends Component {
                 <p className="boxOffice-title">
                     {this.state.data.boxofficeType === "일별 박스오피스"
                         ? // ? moment().format(`YY / MM / DD`)
-                          moment().format(` MM / DD`)
+                          moment().format(` MM / DD`) + " 박스 오피스"
                         : moment().format(`MM`) +
                           "월 " +
                           weekOfMonth(nowDate) +
-                          "주차"}
+                          "주차 박스 오피스"}
                 </p>
                 <div className="boxOffice-rank">
                     <div className="rank-title-box">
