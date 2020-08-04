@@ -1,6 +1,33 @@
-.loading{
-    color:#fff;
-    font-size: 32px;
-    text-align: center;
-    padding-top: 150px;
+// .loading{
+//     color:#fff;
+//     font-size: 32px;
+//     text-align: center;
+//     padding-top: 150px;
+// }
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.loader {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  enable-background: new 0 0 50 50;
+}
+
+svg path,
+svg rect {
+  fill: #31d1c1;
 }
