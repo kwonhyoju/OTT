@@ -61,6 +61,10 @@ class BoxOfficeWrap extends Component {
     this.MovieApi();
   }
 
+  formattedNum(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   static getDerivedStateFromProps(nextProps, prevState) {
     const { name } = nextProps.match.params;
     if (name !== prevState.name) {
@@ -97,7 +101,7 @@ class BoxOfficeWrap extends Component {
                   </div>
                   <div className="movie-detail-btn">
                     <div>
-                      {info.audiAcc} <span>명</span>
+                      {this.formattedNum(info.audiAcc)} <span>명</span>
                     </div>
                   </div>
                   {/* <div className="movie-detail-btn">
@@ -125,7 +129,7 @@ class BoxOfficeWrap extends Component {
                   </div>
                   <div className="movie-detail-btn">
                     <div>
-                      {info.audiAcc} <span>명</span>
+                      {this.formattedNum(info.audiAcc)} <span>명</span>
                     </div>
                   </div>
                   {/* <div className="movie-detail-btn">
