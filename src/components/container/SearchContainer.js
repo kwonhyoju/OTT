@@ -1,5 +1,5 @@
 import React from "react";
-import { inject } from "mobx-react";
+import { inject, observer } from "mobx-react";
 import SearchWrap from "../section/SearchWrap";
 import Loading from "../Loading";
 import Error from "../Error";

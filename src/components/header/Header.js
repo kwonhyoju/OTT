@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import Logo from "../../svg/Logo";
 import moment from "moment";
 
@@ -8,6 +8,7 @@ class Header extends Component {
     super(props);
     this.state = {
       changeHeader: false, //모바일용으로 메뉴 바꿈
+      keyWord: "",
     };
   }
 
@@ -18,9 +19,24 @@ class Header extends Component {
     });
   };
 
+  //바뀐 input 값 저장
+  handleInputChange = (e) => {
+    this.setState({
+      keyWord: e.target.value,
+    });
+  };
+
+  handleEnterPress = (e) => {
+    if (e.key === "Enter") {
+      // this.context.router.push(`/movie/search/${this.state.keyWord}`);
+      // <Redirect to={`/movie/search/${this.state.keyWord}`} />;
+    }
+  };
+
   render() {
     const today = moment().subtract(1, "days").format(`YYYYMMDD`);
     const weekly = moment().subtract(7, "days").format(`YYYYMMDD`);
+    console.log("::::props::::", this.props.history);
     return (
       <header
         className={`header ${
@@ -70,7 +86,13 @@ class Header extends Component {
           <div className="header-right-box">
             <div className="header-search">
               <span></span>
-              <input type="text" placeholder="Search" />
+              <input
+                type="text"
+                placeholder="Search"
+                value={this.state.keyWord}
+                onChange={this.handleInputChange}
+                onKeyPress={this.handleEnterPress}
+              />
             </div>
             <div className="header-user">
               <ul>
