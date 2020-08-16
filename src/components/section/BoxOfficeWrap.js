@@ -13,16 +13,6 @@ class BoxOfficeWrap extends Component {
     };
   }
 
-  //일별
-  // "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=c7681d4ec8dd225970ea706ab9c924da&targetDt=20200707"
-
-  //url 주소 다름
-
-  //주중
-  // "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.xml?key=c7681d4ec8dd225970ea706ab9c924da&targetDt=20200701&weekGb=2";
-  //주말
-  // "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.xml?key=c7681d4ec8dd225970ea706ab9c924da&targetDt=20200701&weekGb=1"
-
   async MovieApi() {
     // console.log(":::props::::", this.props.match.params);
     const { date, name } = this.props.match.params;

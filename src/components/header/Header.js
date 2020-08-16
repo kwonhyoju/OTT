@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../../svg/Logo";
 import moment from "moment";
 
@@ -27,16 +27,16 @@ class Header extends Component {
   };
 
   handleEnterPress = (e) => {
+    const { history } = this.props;
     if (e.key === "Enter") {
-      // this.context.router.push(`/movie/search/${this.state.keyWord}`);
-      // <Redirect to={`/movie/search/${this.state.keyWord}`} />;
+      history.push(`/search/${this.state.keyWord}`);
+      this.setState({ keyWord: "" });
     }
   };
 
   render() {
     const today = moment().subtract(1, "days").format(`YYYYMMDD`);
     const weekly = moment().subtract(7, "days").format(`YYYYMMDD`);
-    console.log("::::props::::", this.props.history);
     return (
       <header
         className={`header ${
@@ -132,4 +132,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

@@ -14,8 +14,8 @@ export default () => (
       <Header />
       <Switch>
         <Route path="/" exact component={SectionContainer} />
+        <Route path="/search/:keyword" component={SearchContainer} />
         <Route path="/movie/:id" component={DetailContainer} />
-        <Route path="/movie/search/:keyword" component={SearchContainer} />
         <Route exact path="/test/:date/:name" component={BoxOfficeWrap} />
         <Redirect from="*" to="/" />
       </Switch>
