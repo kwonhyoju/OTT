@@ -1,80 +1,90 @@
 .searchpage-wrap {
-    .searchpage-box {
-        .user-keyword {
-            padding: 50px 50px;
-            > div {
-                > p {
-                    font-size: 24px;
-                    color: #fff;
-                    font-weight: bold;
-                }
-            }
+  .searchpage-box {
+    .user-keyword {
+      padding: 50px 50px;
+      > div {
+        > p {
+          font-size: 24px;
+          color: #fff;
+          font-weight: bold;
         }
-        .search-info {
-            background: #fff;
-            padding: 50px 30px 50px 50px;
-            .info-count {
-                div {
-                    font-size: 16px;
-                    font-weight: 400;
-                }
-            }
-
-            .info-section {
-                .info-movie-lists {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    flex-wrap: wrap;
-                    padding-top: 20px;
-                    > div {
-                        width: 25%;
-                        padding-right: 20px;
-                        padding-bottom: 20px;
-                        box-sizing: border-box;
-
-                        > div {
-                            border: 1px solid #ddd;
-                            border-radius: 4px;
-                            padding: 20px 15px;
-                            text-align: center;
-                            .title {
-                                font-size: 20px;
-                                font-weight: bold;
-                            }
-                            .genre {
-                                font-size: 14px;
-                                padding-bottom: 15px;
-                            }
-                            .line {
-                                height: 1px;
-                                width: 100%;
-                                background: #ddd;
-                            }
-                            .movie-image {
-                                padding-top: 15px;
-                                width: 100%;
-                            }
-                            .subtext {
-                                padding-top: 15px;
-                                font-size: 15px;
-                                font-weight: 300;
-                                color: #555;
-                            }
-                            .movie-btn {
-                                padding-top: 15px;
-                                > p {
-                                    background: rgb(155, 155, 221);
-                                    border-radius: 4px;
-                                    padding: 10px 0;
-                                    color: #fff;
-                                    box-sizing: border-box;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+    .search-info {
+      background: #fff;
+      padding: 50px 30px 50px 50px;
+      .info-count {
+        div {
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+
+      .info-section {
+        .info-movie-lists {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          padding-top: 20px;
+          > div {
+            width: 25%;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+
+            > div {
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              padding: 20px 15px;
+              text-align: center;
+              .title {
+                font-size: 20px;
+                font-weight: bold;
+              }
+              .genre {
+                font-size: 14px;
+                padding-bottom: 15px;
+                margin-top: 5px;
+              }
+              .line {
+                height: 1px;
+                width: 100%;
+                background: #ddd;
+              }
+              .movie-image {
+                padding-top: 15px;
+                width: 100%;
+                > img {
+                  height: 300px;
+                }
+              }
+              .subtext {
+                line-height: 1.2;
+                padding-top: 15px;
+                font-size: 15px;
+                font-weight: 300;
+                color: #555;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+                overflow: hidden;
+                text-align: left;
+              }
+              .movie-btn {
+                padding-top: 15px;
+                > p {
+                  background: rgb(155, 155, 221);
+                  border-radius: 4px;
+                  padding: 10px 0;
+                  color: #fff;
+                  box-sizing: border-box;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,134 +1,65 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SearchWrap = ({ searchData, keyword }) => {
-    return (
-        <div className="searchpage-wrap">
-            <div className="searchpage-box">
-                <div className="user-keyword">
-                    <div>
-                        <p>"{keyword}"에 대한 검색 결과 입니다.</p>
-                    </div>
-                </div>
-                {/* user-keyword-box end */}
-                <div className="search-info">
-                    <div className="info-count">
-                        <div>검색 결과 20건</div>
-                    </div>
-                    <div className="info-section">
-                        <div className="info-movie-lists">
-                            <div>
-                                <div>
-                                    <p className="title">title</p>
-                                    <p className="genre">genre</p>
-                                    <div className="line"></div>
-                                    <div className="movie-image">
-                                        <img
-                                            src="http://placehold.it/200x100"
-                                            alt="photo"
-                                        />
-                                    </div>
-                                    <p className="subtext">
-                                        this is sub text.this is sub text.this
-                                        is sub text.
-                                    </p>
-                                    <div className="movie-btn">
-                                        <p>movie more</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* 1개 */}
-                            <div>
-                                <div>
-                                    <p className="title">title</p>
-                                    <p className="genre">genre</p>
-                                    <div className="line"></div>
-                                    <div className="movie-image">
-                                        <img
-                                            src="http://placehold.it/200x100"
-                                            alt="photo"
-                                        />
-                                    </div>
-                                    <p className="subtext">
-                                        this is sub text.this is sub text.this
-                                        is sub text.
-                                    </p>
-                                    <div className="movie-btn">
-                                        <p>movie more</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* 1개 */}
-                            <div>
-                                <div>
-                                    <p className="title">title</p>
-                                    <p className="genre">genre</p>
-                                    <div className="line"></div>
-                                    <div className="movie-image">
-                                        <img
-                                            src="http://placehold.it/200x100"
-                                            alt="photo"
-                                        />
-                                    </div>
-                                    <p className="subtext">
-                                        this is sub text.this is sub text.this
-                                        is sub text.
-                                    </p>
-                                    <div className="movie-btn">
-                                        <p>movie more</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* 1개 */}
-                            <div>
-                                <div>
-                                    <p className="title">title</p>
-                                    <p className="genre">genre</p>
-                                    <div className="line"></div>
-                                    <div className="movie-image">
-                                        <img
-                                            src="http://placehold.it/200x100"
-                                            alt="photo"
-                                        />
-                                    </div>
-                                    <p className="subtext">
-                                        this is sub text.this is sub text.this
-                                        is sub text.
-                                    </p>
-                                    <div className="movie-btn">
-                                        <p>movie more</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* 1개 */}
-                            <div>
-                                <div>
-                                    <p className="title">title</p>
-                                    <p className="genre">genre</p>
-                                    <div className="line"></div>
-                                    <div className="movie-image">
-                                        <img
-                                            src="http://placehold.it/200x100"
-                                            alt="photo"
-                                        />
-                                    </div>
-                                    <p className="subtext">
-                                        this is sub text.this is sub text.this
-                                        is sub text.
-                                    </p>
-                                    <div className="movie-btn">
-                                        <p>movie more</p>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* 1개 */}
-                        </div>
-                        {/* info-movie-lists */}
-                    </div>
-                </div>
-                {/* search-info end */}
-            </div>
+/* 검색결과 영화 한개씩 띄우기 */
+const printData = (item, genreData, i) => {
+  return (
+    <div key={i}>
+      <div>
+        <p className="title">{item.title}</p>
+        <p className="genre">
+          {genreData.map((genre) => {
+            let genreName = "";
+            if (item.genre_ids.length && genre.id === item.genre_ids[0])
+              genreName = genre.name;
+            return genreName;
+          })}
+        </p>
+        <div className="line"></div>
+        <div className="movie-image">
+          <img
+            src={`https://image.tmdb.org/t/p/w342/${item.poster_path}`}
+            alt="photo"
+          />
         </div>
-    );
+        <p className="subtext">{item.overview}</p>
+        <Link to={`/movie/${item.id}`}>
+          <div className="movie-btn">
+            <p>more view</p>
+          </div>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const SearchWrap = ({ searchData, genreData, keyword }) => {
+  return (
+    <div className="searchpage-wrap">
+      <div className="searchpage-box">
+        <div className="user-keyword">
+          <div>
+            <p>"{keyword}"에 대한 검색 결과 입니다.</p>
+          </div>
+        </div>
+        {/* user-keyword-box end */}
+        <div className="search-info">
+          <div className="info-count">
+            <div>검색 결과 {searchData.data.total_results}건</div>
+          </div>
+          <div className="info-section">
+            <div className="info-movie-lists">
+              {searchData.data.results.map((item, i) => {
+                return printData(item, genreData, i);
+              })}
+            </div>
+            {/* info-movie-lists */}
+          </div>
+        </div>
+        {/* search-info end */}
+      </div>
+    </div>
+  );
 };
 
 export default SearchWrap;
