@@ -23,11 +23,9 @@
       z-index: 20;
     }
     .detail-right {
-      width: 60%;
       padding: 15px 0;
       color: white;
       // margin-left: 50px;
-      text-align: right;
       z-index: 20;
       .detail-title {
         font-size: 43px;
@@ -89,6 +87,48 @@
           }
         }
       }
+    }
+  }
+}
+
+.large {
+  .detail-right {
+    width: 60%;
+    text-align: right;
+  }
+}
+
+.medium,
+.small {
+  .detail-container {
+    margin: 0 auto;
+    flex-direction: column;
+    .detail-right {
+      margin: 0 auto;
+      .detail-title {
+        text-align: center;
+      }
+      .detail-rates {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.medium {
+  .detail-left {
+    > img {
+      width: 40%;
+      min-width: 240px;
+    }
+  }
+}
+
+.small {
+  .detail-left {
+    > img {
+      width: 80%;
+      max-height: 514px;
     }
   }
 }

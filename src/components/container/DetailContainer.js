@@ -17,7 +17,7 @@ class DetailContainer extends Component {
   componentWillMount() {
     this.props.apiStore.setLoading();
   }
-  
+
   componentDidMount() {
     const {
       match: {
@@ -27,7 +27,7 @@ class DetailContainer extends Component {
     try {
       this.props.apiStore.getMovieDetail(id);
     } catch (e) {
-      this.setState = { error: true };
+      this.setState({ error: true });
     }
   }
 
@@ -39,7 +39,11 @@ class DetailContainer extends Component {
     if (!this.state.error) {
       return (
         <>
-          {loading.length === 1 ? <DetailWrap movieDetail={movieDetail} /> : <Loading />}
+          {loading.length === 1 ? (
+            <DetailWrap movieDetail={movieDetail} />
+          ) : (
+            <Loading />
+          )}
         </>
       );
     } else {
