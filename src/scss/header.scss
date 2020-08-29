@@ -101,17 +101,13 @@
       }
     }
   }
-
   .addHeader {
     display: none;
     padding: 10px 0;
   }
 }
 
-.small,
-.medium {
-  background: #000;
-
+@media screen and (max-width: 1260px) {
   .header {
     > div {
       padding: 20px 15px;

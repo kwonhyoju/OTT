@@ -13,11 +13,24 @@ class Poster extends React.Component {
 
   componentDidMount() {
     this.handleResize();
+    window.addEventListener("resize", this.handleResize);
   }
 
   handleResize() {
-    const screenWidth = document.getElementsByClassName("App")[0].classList[1];
-    this.setState({ screenWidth: screenWidth });
+    const mainWidth = document.getElementsByClassName("App")[0].offsetWidth;
+    if (mainWidth > 1260) {
+      this.setState({
+        screenWidth: "large",
+      });
+    } else if (mainWidth > 600) {
+      this.setState({
+        screenWidth: "medium",
+      });
+    } else {
+      this.setState({
+        screenWidth: "small",
+      });
+    }
   }
 
   render() {
@@ -26,12 +39,12 @@ class Poster extends React.Component {
 
     // (**** 왜 안 되는지 모르겠음 ****)
     // resize가 끝나고 한번만 실행하기 위함
-    let delay = 300;
-    let timer = null;
-    window.addEventListener("resize", () => {
-      clearTimeout(timer);
-      timer = setTimeout(this.handleResize, delay);
-    });
+    // let delay = 300;
+    // let timer = null;
+    // window.addEventListener("resize", () => {
+    //   clearTimeout(timer);
+    //   timer = setTimeout(this.handleResize, delay);
+    // });
 
     let settings = {
       arrows: true,

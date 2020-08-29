@@ -2,7 +2,7 @@
   background: #0a0e10;
   box-sizing: border-box;
   color: #e0e0e0;
-
+  padding: 50px 200px 40px;
   .boxOffice-title {
     font-size: 24px;
     font-weight: bold;
@@ -85,20 +85,17 @@
     }
   }
 }
-
-.large {
-  .boxOffice-wrap {
-    padding: 50px 200px 40px;
-  }
-}
-
-.medium {
+@media screen and (max-width: 1260px) {
   .boxOffice-wrap {
     padding: 50px 100px 40px;
   }
 }
-
-.small {
+@media screen and (max-width: 840px) {
+  .boxOffice-wrap {
+    padding: 50px 70px 40px;
+  }
+}
+@media screen and (max-width: 480px) {
   .boxOffice-wrap {
     padding: 50px 60px 40px;
   }
