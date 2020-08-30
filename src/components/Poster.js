@@ -16,6 +16,10 @@ class Poster extends React.Component {
     window.addEventListener("resize", this.handleResize);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
   handleResize() {
     const mainWidth = document.getElementsByClassName("App")[0].offsetWidth;
     if (mainWidth > 1260) {
