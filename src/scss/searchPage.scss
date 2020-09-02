@@ -10,6 +10,16 @@
         }
       }
     }
+    @media screen and (max-width: 480px) {
+      .user-keyword {
+        padding: 40px 30px;
+        > div {
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
     .search-info {
       background: #fff;
       padding: 50px 30px 50px 50px;
@@ -118,6 +128,11 @@
             grid-template-columns: 1fr;
           }
         }
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .search-info {
+        padding: 50px 30px;
       }
     }
   }
