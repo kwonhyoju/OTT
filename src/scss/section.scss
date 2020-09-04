@@ -34,7 +34,12 @@ button {
       }
       @media screen and (max-width: 840px) {
         .slick-slide {
-          padding: 0 ;
+          padding: 0 10px;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .slick-slide {
+          padding: 0;
         }
       }
 
@@ -92,9 +97,9 @@ button {
             word-wrap: break-word;
             height: 80px;
             overflow: hidden;
-            color:#ccc;
+            color: #ccc;
             text-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
-            font-size:16px;
+            font-size: 16px;
           }
 
           .main-roll-playbtn {
@@ -114,7 +119,7 @@ button {
             margin-top: 20px;
             margin-right: 16px;
             box-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
-            font-weight:500;
+            font-weight: 500;
           }
 
           .main-roll-addbtn {
@@ -133,52 +138,51 @@ button {
             background-position: 22px 11px;
             text-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
             box-shadow: 1px 1px 4px rgba(3, 3, 3, 0.3);
-            font-weight:500;
+            font-weight: 500;
           }
         }
         @media screen and (max-width: 840px) {
           > p {
             .main-roll-title {
-              font-size:40px;
+              font-size: 40px;
             }
             .pop-genre {
               font-size: 20px;
             }
             .pop-subtitle {
-              font-size:14px;
+              font-size: 14px;
             }
           }
         }
         @media screen and (max-width: 560px) {
           > p {
             .main-roll-title {
-              font-size:30px;
+              font-size: 30px;
             }
             .main-roll-playbtn {
-              display:block;
-              margin-right:0;
-              margin-bottom:4px;
+              display: block;
+              margin-right: 0;
+              margin-bottom: 4px;
               text-align: center;
               background-image: none;
-              padding:13px 0;
+              padding: 13px 0;
             }
             .main-roll-addbtn {
-              display:block;
+              display: block;
               text-align: center;
               background-image: none;
-              padding:13px 0;
+              padding: 13px 0;
             }
           }
         }
       }
       @media screen and (max-width: 840px) {
-        li{
+        li {
           padding: 120px 20px 30px 20px;
         }
       }
     }
   }
-  
 
   .section-current-movies {
     color: #222;

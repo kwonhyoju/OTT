@@ -79,12 +79,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -99,81 +99,86 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
-html,body{
-    font-family: "NotoSansKR"!important;
+html,
+body {
+  font-family: "NotoSansKR" !important;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: "";
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 a {
-    all: unset;
-    cursor: pointer;
+  all: unset;
+  cursor: pointer;
 }
 
 *,
 input {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input {
-    border: none;
-    box-sizing: border-box;
-&:focus,
-&:active {
+  border: none;
+  box-sizing: border-box;
+  &:focus,
+  &:active {
     outline: none;
+  }
 }
+
+li:focus {
+  outline: none;
 }
 
 //font
 
-@font-face{
+@font-face {
   font-family: "NotoSansKR";
   src: url("../font/NotoSansKR-Light.otf") format("opentype"),
-  url("../font/NotoSansKR-Light.woff") format("woff"),
-  url("../font/NotoSansKR-Light.woff2") format("woff2");
+    url("../font/NotoSansKR-Light.woff") format("woff"),
+    url("../font/NotoSansKR-Light.woff2") format("woff2");
   font-weight: 400;
 }
 
-@font-face{
+@font-face {
   font-family: "NotoSansKR";
   src: url("../font/NotoSansKR-Regular.otf") format("opentype"),
-  url("../font/NotoSansKR-Regular.woff") format("woff"),
-  url("../font/NotoSansKR-Regular.woff2") format("woff2");
+    url("../font/NotoSansKR-Regular.woff") format("woff"),
+    url("../font/NotoSansKR-Regular.woff2") format("woff2");
   font-weight: 400;
 }
 
-@font-face{
+@font-face {
   font-family: "NotoSansKR";
   src: url("../font/NotoSansKR-Bold.otf") format("opentype"),
-  url("../font/NotoSansKR-Bold.woff") format("woff"),
-  url("../font/NotoSansKR-Bold.woff2") format("woff2");
+    url("../font/NotoSansKR-Bold.woff") format("woff"),
+    url("../font/NotoSansKR-Bold.woff2") format("woff2");
   font-weight: 600;
 }
