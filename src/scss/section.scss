@@ -7,6 +7,11 @@
 .slick-slide {
   padding: 0 10px;
 }
+// @media screen and (max-width: 480px) {
+//   .slick-slide {
+//     padding: 0 ;
+//   }
+// }
 
 // 카드 눌렀을 때 흰 테두리 제거
 div:focus {
@@ -27,13 +32,18 @@ button {
       .slick-slide {
         padding: 0 20px;
       }
+      @media screen and (max-width: 840px) {
+        .slick-slide {
+          padding: 0 ;
+        }
+      }
 
       li {
         min-width: 80%;
         height: 100%;
         // background-size: cover;
         // background-position: 0px 31%;
-        padding: 320px 0 55px 56px;
+        padding: 320px 50px 55px 56px;
         border-radius: 20px;
         // border: none;
         overflow: hidden;
@@ -64,7 +74,7 @@ button {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            text-shadow: 1px 1px 1px #000;
+            text-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
           }
 
           .pop-genre {
@@ -72,7 +82,7 @@ button {
             font-weight: 500;
             line-height: 25px;
             padding-left: 10px;
-            text-shadow: 1px 1px 1px #000;
+            text-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
           }
 
           .pop-subtitle {
@@ -82,7 +92,9 @@ button {
             word-wrap: break-word;
             height: 80px;
             overflow: hidden;
-            text-shadow: 1px 1px 1px #000;
+            color:#ccc;
+            text-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
+            font-size:16px;
           }
 
           .main-roll-playbtn {
@@ -101,12 +113,13 @@ button {
             box-sizing: border-box;
             margin-top: 20px;
             margin-right: 16px;
-            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            box-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
+            font-weight:500;
           }
 
           .main-roll-addbtn {
             background-color: rgba(255, 255, 255, 0);
-            border: 2px solid #fff;
+            border: 1px solid #fff;
             border-radius: 10px;
             box-sizing: border-box;
             padding: 9px 15px 9px 40px;
@@ -118,13 +131,54 @@ button {
             background-repeat: no-repeat;
             background-size: 10px 16px;
             background-position: 22px 11px;
-            text-shadow: 1px 1px 1px #000;
-            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 3px rgba(3, 3, 3, 0.5);
+            box-shadow: 1px 1px 4px rgba(3, 3, 3, 0.3);
+            font-weight:500;
           }
+        }
+        @media screen and (max-width: 840px) {
+          > p {
+            .main-roll-title {
+              font-size:40px;
+            }
+            .pop-genre {
+              font-size: 20px;
+            }
+            .pop-subtitle {
+              font-size:14px;
+            }
+          }
+        }
+        @media screen and (max-width: 560px) {
+          > p {
+            .main-roll-title {
+              font-size:30px;
+            }
+            .main-roll-playbtn {
+              display:block;
+              margin-right:0;
+              margin-bottom:4px;
+              text-align: center;
+              background-image: none;
+              padding:13px 0;
+            }
+            .main-roll-addbtn {
+              display:block;
+              text-align: center;
+              background-image: none;
+              padding:13px 0;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 840px) {
+        li{
+          padding: 120px 20px 30px 20px;
         }
       }
     }
   }
+  
 
   .section-current-movies {
     color: #222;

@@ -12,7 +12,7 @@ const mainRoll = (popData, genreData) => {
     autoplay: true,
     slidesToShow: 1,
     lazyLode: "ondemand",
-    centerMode: true,
+    // centerMode: true,
     rows: 1,
     autoplaySpeed: 5000,
   };

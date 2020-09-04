@@ -104,12 +104,12 @@ class Header extends Component {
         </div>
         <div className="addHeader">
           <ul>
-            <li>
+            {/* <li>
               <a href="#">로그인</a>
             </li>
             <li>
               <a hrf="#">회원가입</a>
-            </li>
+            </li> */}
             <li>
               <NavLink to={`/test/${today}/today`} activeClassName="active">
                 일별 랭킹

@@ -41,14 +41,6 @@ class Poster extends React.Component {
     const { data, genreData, diffWidth } = this.props;
     const { screenWidth } = this.state;
 
-    // (**** 왜 안 되는지 모르겠음 ****)
-    // resize가 끝나고 한번만 실행하기 위함
-    // let delay = 300;
-    // let timer = null;
-    // window.addEventListener("resize", () => {
-    //   clearTimeout(timer);
-    //   timer = setTimeout(this.handleResize, delay);
-    // });
 
     let settings = {
       arrows: true,
