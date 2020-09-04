@@ -194,6 +194,16 @@ button {
       line-height: 59px;
       padding: 80px 0 30px 0;
     }
+    @media screen and (max-width: 840px) {
+      > p {
+        font-size: 45px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      > p {
+        font-size: 40px;
+      }
+    }
 
     .section-roll {
       &::-webkit-scrollbar {
@@ -268,7 +278,7 @@ button {
               }
 
               .subTitle {
-                height: 50px;
+                // height: 50px;
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
@@ -290,6 +300,34 @@ button {
                 padding: 5px 0;
                 box-sizing: border-box;
                 border-radius: 5px;
+              }
+            }
+            @media screen and (max-width: 840px) {
+              .title {
+                font-size: 25px;
+              }
+              .data-count {
+                font-size: 15px;
+              }
+              .text {
+                font-size: 15px;
+              }
+              .detail-view > button {
+                font-size: 17px;
+              }
+            }
+            @media screen and (max-width: 480px) {
+              .title {
+                font-size: 23px;
+              }
+              .data-count {
+                font-size: 14px;
+              }
+              .text {
+                font-size: 14px;
+              }
+              .detail-view > button {
+                font-size: 15px;
               }
             }
           }
@@ -314,6 +352,16 @@ button {
       line-height: 59px;
       padding: 80px 0 30px 0;
     }
+    @media screen and (max-width: 840px) {
+      > p {
+        font-size: 45px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      > p {
+        font-size: 40px;
+      }
+    }
 
     .section-roll {
       // display: flex;
@@ -323,17 +371,8 @@ button {
       &::-webkit-scrollbar {
         display: none;
       }
-      // roll 할 때 2행으로 나오는 문제
-      // .slick-track {
-      //   display: flex;
-      // }
 
       .hover-container {
-        // min-width: 400px;
-        // height: 280px;
-        // position: relative;
-        // border-radius: 14px;
-        // overflow: hidden;
         height: 280px;
         border-radius: 14px;
         overflow: hidden;
@@ -385,7 +424,7 @@ button {
               }
 
               .subTitle {
-                height: 48px;
+                // height: 48px;
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
@@ -407,6 +446,34 @@ button {
                 padding: 5px 0;
                 box-sizing: border-box;
                 border-radius: 5px;
+              }
+            }
+            @media screen and (max-width: 840px) {
+              .title {
+                font-size: 25px;
+              }
+              .data-count {
+                font-size: 15px;
+              }
+              .text {
+                font-size: 15px;
+              }
+              .detail-view > button {
+                font-size: 17px;
+              }
+            }
+            @media screen and (max-width: 480px) {
+              .title {
+                font-size: 23px;
+              }
+              .data-count {
+                font-size: 14px;
+              }
+              .text {
+                font-size: 14px;
+              }
+              .detail-view > button {
+                font-size: 15px;
               }
             }
           }

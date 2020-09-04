@@ -71,7 +71,7 @@ class SectionWrap extends React.Component {
 
   handleResize() {
     const mainWidth = document.getElementsByClassName("App")[0].clientWidth;
-    mainWidth < 480
+    mainWidth <= 480
       ? this.setState({ centerMode: false })
       : this.setState({ centerMode: true });
   }
