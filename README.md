@@ -2,10 +2,13 @@
 
 ### 👩‍💻 참여자
 
-- 권효주 https://github.com/kwonhyoju
-- 윤정현 https://github.com/JHYOOOOON
-  <br/>
-  <br/>
+- 개발자
+  - 권효주 https://github.com/kwonhyoju
+  - 윤정현 https://github.com/JHYOOOOON
+- 디자이너
+  - 이지은
+    <br/>
+    <br/>
 
 ### 💻 실행방법
 
